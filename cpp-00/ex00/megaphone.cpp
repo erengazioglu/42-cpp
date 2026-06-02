@@ -9,6 +9,10 @@ int main(int argc, char **argv) {
         return 1;
     }
     std::string msg = argv[1];
-    std::cout << "Hello World!\n";
+    for (int i = 0; i < (int) msg.length(); i++) {
+        if (std::isalpha(msg[i]))
+            msg[i] = std::toupper(msg[i]);
+    }
+    std::cout << msg << std::endl;
     return 0;
 }
