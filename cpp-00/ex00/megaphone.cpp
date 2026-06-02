@@ -1,6 +1,14 @@
 #include <iostream>
 #include <string>
 
+void megaphone(std::string msg) {
+    for (int i = 0; i < (int) msg.length(); i++) {
+        if (std::isalpha(msg[i]))
+            msg[i] = std::toupper(msg[i]);
+    }
+    std::cout << msg;
+}
+
 int main(int argc, char **argv) {
     if (argc != 2) {
         std::cerr \
