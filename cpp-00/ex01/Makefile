@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/25 20:51:36 by egaziogl          #+#    #+#              #
-#    Updated: 2026/06/25 20:51:36 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/06/26 00:15:30 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,4 +14,4 @@ CC		= c++ -Wall -Wextra -Werror -std=c++98
 NAME 	= phonebook
 
 all:
-	$(CC) $(NAME).cpp -o $(NAME)
+	$(CC) classes.cpp main.cpp -o $(NAME)
