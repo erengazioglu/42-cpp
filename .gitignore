@@ -1,1 +1,5 @@
 *.out
+
+# EXECUTABLES
+ex00/megaphone
+ex01/phonebook
