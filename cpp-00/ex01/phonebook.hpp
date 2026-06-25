@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/26 00:14:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/26 00:26:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 # define RED "\033[31m"
 # define GRN "\033[32m"
@@ -36,6 +37,8 @@ class Contact {
         std::string nname;
         std::string phone;
         std::string secret;
+        void    print_row(void);
+        void    print_full(void);
     private:
         int         _idx;
 };
@@ -44,7 +47,7 @@ class Phonebook {
     public:
         Contact& get_contact(int i);
         void    add(int i);
-        void    search();
+        void    search(void);
     private:
         Contact _contacts[8];
 };
