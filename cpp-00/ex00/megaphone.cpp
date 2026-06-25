@@ -3,6 +3,7 @@
 
 void megaphone(std::string msg) {
     for (int i = 0; i < (int) msg.length(); i++) {
+        // trim left and right
         if (std::isalpha(msg[i]))
             msg[i] = std::toupper(msg[i]);
     }
