@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/27 01:59:30 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/27 11:06:04 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Contact::Contact()
 {
-	_idx = -1;
 	fname = "";
 	lname = "";
 	nname = "";
@@ -22,25 +21,32 @@ Contact::Contact()
 	secret = "";
 }
 
-void	Contact::set_idx(int i)
-{
-	_idx = i;
-}
-
-int		Contact::get_idx() const
-{
-	return _idx;
-}
-
 Contact&	Phonebook::get_contact(int i)
 {
 	return _contacts[i];
 }
 
-void	Phonebook::add(int i)
+const Contact&	Phonebook::get_contact(int i) const
 {
+	return _contacts[i];
+}
+
+int		Phonebook::length() const {
+	int i = 0;
+	while (i < 8 && _contacts[i].fname != "") {
+		i++;
+	}
+	return (i);
+}
+
+void	Phonebook::add()
+{
+	int i = length();
+	if (i == 8) {
+		std::cout << RED << "Phonebook is full. Cannot add more contacts." << RST << std::endl;
+		return ;
+	}
 	Contact& contact = get_contact(i);
-	contact.set_idx(i);
 	contact.fname = get_input("First name:", false);
 	contact.lname = get_input("Last name:", false);
 	contact.nname = get_input("Nickname:", false);
@@ -51,5 +57,6 @@ void	Phonebook::add(int i)
 
 void	Phonebook::search()
 {
+	std::cout << *this;
 	return ;
 }

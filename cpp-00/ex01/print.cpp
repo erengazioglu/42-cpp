@@ -6,29 +6,40 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/27 01:59:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/27 11:08:18 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-void print_field(std::string field, bool is_last)
+void print_field(std::ostream& os, std::string field, bool is_last = false)
 {
 	if (field.length() > 10)
-		std::cout << field.substr(0, 9) << ".";
+		os << field.substr(0, 9) << ".";
 	else
-		std::cout << std::setw(10) << field;
+		os << std::setw(10) << field;
 	if (!is_last)
-		std::cout << "|";
+		os << "|";
 	else
-		std::cout << std::endl;
+		os << std::endl;
+}
+std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook)
+{
+	for (int i = 0; i < phonebook.length(); i++) {
+		const Contact& contact = phonebook.get_contact(i);
+		print_field(os, std::to_string(i));
+		print_field(os, contact.fname);
+		print_field(os, contact.lname);
+		print_field(os, contact.nname, true);
+	}
+	return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const Contact& contact)
-{
-	print_field(std::to_string(contact.get_idx()));
-	print_field(contact.fname);
-	print_field(contact.lname);
-	print_field(contact.nname, true);
+std::ostream& operator<<(std::ostream& os, const Contact& contact) {
+	os << "First name: " << contact.fname << std::endl;
+	os << "Last name: " << contact.lname << std::endl;
+	os << "Nickname: " << contact.nname << std::endl;
+	os << "Phone number: " << contact.phone << std::endl;
+	os << "Darkest secret: " << contact.secret << std::endl;
 	return os;
 }
