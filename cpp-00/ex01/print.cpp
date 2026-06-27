@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/27 11:08:18 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/27 14:21:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ void print_field(std::ostream& os, std::string field, bool is_last = false)
 	else
 		os << std::setw(10) << field;
 	if (!is_last)
-		os << "|";
+		os << BLU << "|" << RST;
 	else
 		os << std::endl;
 }
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook)
 {
+	if (!phonebook.length())
+		os << RED << "Phonebook is empty. Please add some contacts first." << RST << std::endl;
 	for (int i = 0; i < phonebook.length(); i++) {
 		const Contact& contact = phonebook.get_contact(i);
 		print_field(os, std::to_string(i));
