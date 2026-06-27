@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/26 00:26:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/27 02:02:42 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,31 @@
 std::string get_input(std::string prompt, bool accept_empty);
 
 class Contact {
-    public:
-        Contact();
-        int     get_idx(void);
-        void    set_idx(int i);
-        std::string fname;
-        std::string lname;
-        std::string nname;
-        std::string phone;
-        std::string secret;
-        void    print_row(void);
-        void    print_full(void);
-    private:
-        int         _idx;
+	public:
+		Contact();
+		int		get_idx(void)		const;
+		void	set_idx(int i);
+		std::string fname;
+		std::string lname;
+		std::string nname;
+		std::string phone;
+		std::string secret;
+		void    print_full(void)	const;
+	private:
+		int         _idx;
 };
 
 class Phonebook {
-    public:
-        Contact& get_contact(int i);
-        void    add(int i);
-        void    search(void);
-    private:
-        Contact _contacts[8];
+	public:
+		Contact& get_contact(int i);
+		void    add(int i);
+		void    search(void);
+	private:
+		Contact _contacts[8];
 };
+
+std::ostream& operator<<(std::ostream& os, const Contact& contact);
+std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook);
+void print_field(std::string field, bool is_last = false);
 
 #endif
