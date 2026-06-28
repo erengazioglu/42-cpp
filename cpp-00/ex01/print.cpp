@@ -6,11 +6,18 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/27 14:21:16 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:52:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+std::string	build_prompt(Phonebook& phonebook) {
+	int len = phonebook.length();
+	if (len == 1)
+		return "(0)";
+	return ("(0-" + std::to_string(len-1) + ")");
+}
 
 void print_field(std::ostream& os, std::string field, bool is_last = false)
 {
@@ -25,8 +32,6 @@ void print_field(std::ostream& os, std::string field, bool is_last = false)
 }
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook)
 {
-	if (!phonebook.length())
-		os << RED << "Phonebook is empty. Please add some contacts first." << RST << std::endl;
 	for (int i = 0; i < phonebook.length(); i++) {
 		const Contact& contact = phonebook.get_contact(i);
 		print_field(os, std::to_string(i));

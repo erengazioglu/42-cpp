@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/27 10:58:34 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:53:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ class Phonebook {
 		Contact _contacts[8];
 };
 
+std::string	build_prompt(Phonebook& phonebook);
 std::ostream& operator<<(std::ostream& os, const Contact& contact);
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook);
-std::string get_input(std::string prompt, bool accept_empty);
+std::string get_input(std::string prompt, bool accept_empty = false);
 void print_field(std::string field, bool is_last = false);
 
 #endif
