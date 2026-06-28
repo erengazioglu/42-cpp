@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/28 15:59:15 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/06/28 16:33:40 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	Phonebook::add()
 	contact.nname = get_input("Nickname:");
 	contact.phone = get_input("Phone number:");
 	contact.secret = get_input("Darkest secret:");
-	std::cout << contact << std::endl;
 }
 
 void	Phonebook::search()
@@ -72,5 +71,5 @@ void	Phonebook::search()
 		user_input = get_input(prompt);
 		i = user_input[0] - '0';
 	}
-	return ;
+	std::cout << get_contact(i);
 }
