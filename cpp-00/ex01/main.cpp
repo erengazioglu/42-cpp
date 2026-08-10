@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:12:40 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/28 15:43:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/10 21:33:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ std::string get_input(std::string prompt, bool accept_empty)
 	std::string user_input = "";
 	std::cout << BLU;
 	if (prompt.length()) std::cout << prompt << std::endl << RST;
-	std::cin >> user_input;
+	std::getline(std::cin, user_input);
 	if (!accept_empty) {
 		while (user_input == "") {
 			std::cout << RED << "Please enter a valid string." << RST;
 			if (prompt.length()) std::cout << prompt << std::endl << RST;
-			std::cin >> user_input;
+			std::getline(std::cin, user_input);
 		}
 	}
 	return (user_input);
