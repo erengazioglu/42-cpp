@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/12 17:51:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/12 18:07:59 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,7 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 // ___
-// CONSTRUCTOR/DESTRUCTOR
-
-Account::Account(int initial_deposit) {
-	_accountIndex = getNbAccounts();
-	_nbWithdrawals = 0;
-	_nbDeposits = 0;
-	_amount = initial_deposit;
-	_nbAccounts++;
-}
-
-Account::~Account(void) {
-	
-}
-
-// ---
-// STATIC FUNCTIONS
+// Static methods
 
 int		Account::getNbAccounts(void) {
 	return _nbAccounts;
@@ -58,11 +43,30 @@ int		Account::getNbWithdrawals(void) {
 void	Account::displayAccountsInfos(void) {
 	_displayTimestamp();
 	std::cout \
-		<< "accounts:" << getNbAccounts() \
-		<< "total:" << getTotalAmount() \
-		<< "deposits:" << getNbDeposits() \
-		<< "withdrawals:" << getNbWithdrawals();
+		<< "accounts:" << getNbAccounts() << ";" \
+		<< "total:" << getTotalAmount() << ";" \
+		<< "deposits:" << getNbDeposits() << ";" \
+		<< "withdrawals:" << getNbWithdrawals() << "\n";
 }
+
+// ___
+// Constructor/destructor
+
+Account::Account(int initial_deposit) {
+	_accountIndex = getNbAccounts();
+	_nbWithdrawals = 0;
+	_nbDeposits = 0;
+	_amount = initial_deposit;
+	_nbAccounts++;
+}
+
+Account::~Account(void) {
+	_nbAccounts--;
+	_totalAmount -= _amount;
+}
+
+// ___
+// Public methods
 
 void	Account::makeDeposit(int deposit) {
 	_amount += deposit;
@@ -72,10 +76,13 @@ void	Account::makeDeposit(int deposit) {
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
+	if (withdrawal > _amount)
+		return false;
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
 	_nbWithdrawals++;
 	_totalNbWithdrawals++;
+	return true;
 }
 
 int		Account::checkAmount(void) const {
@@ -85,12 +92,15 @@ int		Account::checkAmount(void) const {
 void	Account::displayStatus(void) const {
 	_displayTimestamp();
 	std::cout \
-		<< "index:" << _accountIndex \
-		<< "amount:" << _amount \
-		<< "deposits:" << _nbDeposits \
-		<< "withdrawals:" << _nbWithdrawals;
+		<< "index:" << _accountIndex << ";" \
+		<< "amount:" << _amount << ";" \
+		<< "deposits:" << _nbDeposits << ";"\
+		<< "withdrawals:" << _nbWithdrawals \
+		<< "\n";
 }
 
 void	Account::_displayTimestamp(void) {
 	// format: '[yyyymmdd_hhmmss] '
+	std::cout \
+		<< "[] ";
 }
