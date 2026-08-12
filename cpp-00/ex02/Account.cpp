@@ -6,14 +6,22 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/07/23 13:37:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/12 17:51:25 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 
-// ---
+// ___
+// Static variables
+
+int Account::_nbAccounts = 0;
+int Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
+
+// ___
 // CONSTRUCTOR/DESTRUCTOR
 
 Account::Account(int initial_deposit) {
