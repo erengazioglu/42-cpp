@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 01:09:50 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 01:27:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	Account::makeDeposit(int deposit) {
 	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
+	_displayTimestamp();
 	std::cout \
 		<< "index:" << _accountIndex << ";" \
 		<< "p_amount:" << p_amount << ";" \
@@ -96,6 +97,7 @@ void	Account::makeDeposit(int deposit) {
 
 bool	Account::makeWithdrawal(int withdrawal) {
 	int p_amount = _amount;
+	_displayTimestamp();
 	std::cout \
 		<< "index:" << _accountIndex << ";" \
 		<< "p_amount:" << p_amount << ";" \
@@ -130,8 +132,14 @@ void	Account::displayStatus(void) const {
 }
 
 void	Account::_displayTimestamp(void) {
-	// format: '[yyyymmdd_hhmmss] '
+	char str[19];
+	str[18] = '\0';
 	time_t timestamp;
-	std::cout << "[" \
-		<< time(&timestamp) << "] ";
+	struct tm *datetime;
+	time(&timestamp);
+	datetime = localtime(&timestamp);
+	strftime(
+		str, 18, "[%Y%m%d_%H%M%S] ", datetime
+	);
+	std::cout << str;
 }
