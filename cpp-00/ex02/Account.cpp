@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/12 18:07:59 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/13 23:17:39 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ Account::Account(int initial_deposit) {
 	_nbDeposits = 0;
 	_amount = initial_deposit;
 	_nbAccounts++;
+	_totalAmount += _amount;
+	_displayTimestamp();
+	std::cout \
+		<< "index:" << _accountIndex << ";" \
+		<< "amount:" << _amount << ";" \
+		<< "created\n";
 }
 
 Account::~Account(void) {
