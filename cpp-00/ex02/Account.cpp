@@ -6,12 +6,13 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/13 23:17:39 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 01:09:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 // ___
 // Static variables
@@ -69,25 +70,48 @@ Account::Account(int initial_deposit) {
 Account::~Account(void) {
 	_nbAccounts--;
 	_totalAmount -= _amount;
+	_displayTimestamp();
+	std::cout \
+		<< "index:" << _accountIndex << ";" \
+		<< "amount:" << _amount << ";closed\n";
 }
 
 // ___
 // Public methods
 
 void	Account::makeDeposit(int deposit) {
+	int p_amount = _amount;
 	_amount += deposit;
 	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
+	std::cout \
+		<< "index:" << _accountIndex << ";" \
+		<< "p_amount:" << p_amount << ";" \
+		<< "deposit:" << deposit << ";" \
+		<< "amount:" << _amount << ";" \
+		<< "nb_deposits:" << _nbDeposits << ";"\
+		<< "\n";
 }
 
 bool	Account::makeWithdrawal(int withdrawal) {
-	if (withdrawal > _amount)
+	int p_amount = _amount;
+	std::cout \
+		<< "index:" << _accountIndex << ";" \
+		<< "p_amount:" << p_amount << ";" \
+		<< "withdrawal:";
+	if (withdrawal > _amount) {
+		std::cout << "refused\n";
 		return false;
+	}
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
 	_nbWithdrawals++;
 	_totalNbWithdrawals++;
+	std::cout \
+		<< withdrawal << ";" \
+		<< "amount:" << _amount << ";" \
+		<< "nb_withdrawals:" << _nbWithdrawals << "\n";
 	return true;
 }
 
@@ -107,6 +131,7 @@ void	Account::displayStatus(void) const {
 
 void	Account::_displayTimestamp(void) {
 	// format: '[yyyymmdd_hhmmss] '
-	std::cout \
-		<< "[] ";
+	time_t timestamp;
+	std::cout << "[" \
+		<< time(&timestamp) << "] ";
 }
