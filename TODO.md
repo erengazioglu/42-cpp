@@ -8,10 +8,10 @@
 
 ### ex01
 
-- [ ] Make `Contact` member variables private
+- [x] Make `Contact` member variables private
 - [ ] If phonebook is full, have new contact override the 8th contact
 - [ ] Display "Last contact was overwritten" warning
 - [ ] Ltrim and rtrim user input
 - [ ] Accept lowercase user input for ADD/SEARCH/EXIT
 - [ ] Accept EXIT anywhere
-- [ ] Make sure you can't SEARCH for contact N if N doesn't exist
+- [x] Make sure you can't SEARCH for contact N if N doesn't exist
