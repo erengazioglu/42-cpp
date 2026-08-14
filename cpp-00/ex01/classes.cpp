@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/28 16:33:40 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:24:37 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Contact::Contact()
 {
-	fname = "";
-	lname = "";
-	nname = "";
-	phone = "";
-	secret = "";
+	_fname = "";
+	_lname = "";
+	_nname = "";
+	_phone = "";
+	_secret = "";
 }
 
 Contact&	Phonebook::get_contact(int i)
@@ -33,7 +33,7 @@ const Contact&	Phonebook::get_contact(int i) const
 
 int		Phonebook::length() const {
 	int i = 0;
-	while (i < 8 && _contacts[i].fname != "") {
+	while (i < 8 && _contacts[i].get_fname() != "") {
 		i++;
 	}
 	return (i);
@@ -42,16 +42,19 @@ int		Phonebook::length() const {
 void	Phonebook::add()
 {
 	int i = length();
+	std::string fields[5];
 	if (i == 8) {
 		std::cout << RED << "Phonebook is full. Cannot add more contacts." << RST << std::endl;
 		return ;
 	}
 	Contact& contact = get_contact(i);
-	contact.fname = get_input("First name:");
-	contact.lname = get_input("Last name:");
-	contact.nname = get_input("Nickname:");
-	contact.phone = get_input("Phone number:");
-	contact.secret = get_input("Darkest secret:");
+	fields[0] = get_input("First name:");
+	fields[1] = get_input("Last name:");
+	fields[2] = get_input("Nickname:");
+	fields[3] = get_input("Phone number:");
+	fields[4] = get_input("Darkest secret:");
+	contact = Contact(fields[0], fields[1], fields[2], fields[3], fields[4]);
+	std::cout << GRN << "Contact added successfully.\n" << RST;
 }
 
 void	Phonebook::search()

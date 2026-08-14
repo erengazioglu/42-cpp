@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 17:51:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:24:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,17 @@
 class Contact {
 	public:
 		Contact();
-		std::string fname;
-		std::string lname;
-		std::string nname;
-		std::string phone;
-		std::string secret;
+		Contact(
+			std::string fname, std::string lname, std::string nname,
+			std::string phone, std::string secret
+		);
+		std::string get_fname(void) const;
+	private:
+		std::string _fname;
+		std::string _lname;
+		std::string _nname;
+		std::string _phone;
+		std::string _secret;
 };
 
 class Phonebook {
