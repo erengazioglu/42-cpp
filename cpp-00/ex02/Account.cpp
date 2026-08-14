@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 18:11:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 18:43:12 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Account::makeDeposit(int deposit) {
 		<< "p_amount:" << p_amount << ";" \
 		<< "deposit:" << deposit << ";" \
 		<< "amount:" << _amount << ";" \
-		<< "nb_deposits:" << _nbDeposits << ";"\
+		<< "nb_deposits:" << _nbDeposits \
 		<< "\n";
 }
 
