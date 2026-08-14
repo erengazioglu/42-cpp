@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 14:02:08 by egaziogl          #+#    #+#              #
-#    Updated: 2026/07/23 14:03:27 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/14 18:56:58 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,3 +22,10 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(SRC) -o $(NAME)
+
+clean:
+	@echo "Nothing to clean"
+fclean:
+	rm -f $(NAME)
+re: fclean all
+.PHONY: all clean fclean re
