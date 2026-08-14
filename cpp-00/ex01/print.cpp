@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/06/28 15:52:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 17:59:36 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 std::string	build_prompt(Phonebook& phonebook) {
 	int len = phonebook.length();
-	if (len == 1)
-		return "(0)";
-	return ("(0-" + std::to_string(len-1) + ")");
+	if (len == 1) return "(0)";
+	std::ostringstream oss;
+	oss << "(0-" << len - 1 << ")";
+	return oss.str();
 }
 
 void print_field(std::ostream& os, std::string field, bool is_last = false)
@@ -30,11 +31,19 @@ void print_field(std::ostream& os, std::string field, bool is_last = false)
 	else
 		os << std::endl;
 }
+void print_field(std::ostream& os, int idx, bool is_last = false)
+{
+	os << std::setw(10) << idx;
+	if (!is_last)
+		os << BLU << "|" << RST;
+	else
+		os << std::endl;
+}
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook)
 {
 	for (int i = 0; i < phonebook.length(); i++) {
 		const Contact& contact = phonebook.get_contact(i);
-		print_field(os, std::to_string(i));
+		print_field(os, i);
 		print_field(os, contact.fname);
 		print_field(os, contact.lname);
 		print_field(os, contact.nname, true);
