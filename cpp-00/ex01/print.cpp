@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 17:59:36 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 23:38:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,21 @@ void print_field(std::ostream& os, int idx, bool is_last = false)
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook)
 {
 	for (int i = 0; i < phonebook.length(); i++) {
-		const Contact& contact = phonebook.get_contact(i);
+		struct Fields fields = phonebook.get_contact(i).get_fields();
 		print_field(os, i);
-		print_field(os, contact.fname);
-		print_field(os, contact.lname);
-		print_field(os, contact.nname, true);
+		print_field(os, fields.fname);
+		print_field(os, fields.lname);
+		print_field(os, fields.nname, true);
 	}
 	return os;
 }
 
 std::ostream& operator<<(std::ostream& os, const Contact& contact) {
-	os << "First name: " << contact.fname << std::endl;
-	os << "Last name: " << contact.lname << std::endl;
-	os << "Nickname: " << contact.nname << std::endl;
-	os << "Phone number: " << contact.phone << std::endl;
-	os << "Darkest secret: " << contact.secret << std::endl;
+	struct Fields fields = contact.get_fields();
+	os << "First name: " << fields.fname << std::endl;
+	os << "Last name: " << fields.lname << std::endl;
+	os << "Nickname: " << fields.nname << std::endl;
+	os << "Phone number: " << fields.phone << std::endl;
+	os << "Darkest secret: " << fields.secret << std::endl;
 	return os;
 }

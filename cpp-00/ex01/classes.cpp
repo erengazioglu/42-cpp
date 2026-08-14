@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 20:24:37 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 23:41:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,24 @@ Contact::Contact()
 	_secret = "";
 }
 
+Contact::Contact(struct Fields fields) {
+	_fname = fields.fname;
+	_lname = fields.lname;
+	_nname = fields.nname;
+	_phone = fields.phone;
+	_secret = fields.secret;
+}
+
+struct Fields	Contact::get_fields(void) const {
+	struct Fields fields;
+	fields.fname = _fname;
+	fields.lname = _lname;
+	fields.nname = _nname;
+	fields.phone = _phone;
+	fields.secret = _secret;
+	return fields;
+}
+
 Contact&	Phonebook::get_contact(int i)
 {
 	return _contacts[i];
@@ -33,7 +51,7 @@ const Contact&	Phonebook::get_contact(int i) const
 
 int		Phonebook::length() const {
 	int i = 0;
-	while (i < 8 && _contacts[i].get_fname() != "") {
+	while (i < 8 && _contacts[i].get_fields().fname != "") {
 		i++;
 	}
 	return (i);
@@ -42,18 +60,18 @@ int		Phonebook::length() const {
 void	Phonebook::add()
 {
 	int i = length();
-	std::string fields[5];
+	struct Fields fields;
 	if (i == 8) {
 		std::cout << RED << "Phonebook is full. Cannot add more contacts." << RST << std::endl;
 		return ;
 	}
 	Contact& contact = get_contact(i);
-	fields[0] = get_input("First name:");
-	fields[1] = get_input("Last name:");
-	fields[2] = get_input("Nickname:");
-	fields[3] = get_input("Phone number:");
-	fields[4] = get_input("Darkest secret:");
-	contact = Contact(fields[0], fields[1], fields[2], fields[3], fields[4]);
+	fields.fname = get_input("First name:");
+	fields.lname = get_input("Last name:");
+	fields.nname = get_input("Nickname:");
+	fields.phone = get_input("Phone number:");
+	fields.secret = get_input("Darkest secret:");
+	contact = Contact(fields);
 	std::cout << GRN << "Contact added successfully.\n" << RST;
 }
 

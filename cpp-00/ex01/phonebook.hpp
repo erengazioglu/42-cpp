@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 20:24:16 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 23:36:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,19 @@
 # define CYN "\033[36m"
 # define RST "\033[0m"
 
+struct Fields {
+	std::string fname;
+	std::string lname;
+	std::string nname;
+	std::string phone;
+	std::string secret;
+};
+
 class Contact {
 	public:
 		Contact();
-		Contact(
-			std::string fname, std::string lname, std::string nname,
-			std::string phone, std::string secret
-		);
-		std::string get_fname(void) const;
+		Contact(struct Fields fields);
+		struct Fields get_fields(void) const;
 	private:
 		std::string _fname;
 		std::string _lname;
