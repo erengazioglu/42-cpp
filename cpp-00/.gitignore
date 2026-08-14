@@ -3,6 +3,7 @@
 # EXECUTABLES
 ex00/megaphone
 ex01/phonebook
+ex02/tests
 
 # MISC
 ex02/*.log

@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/14 18:00:49 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/14 18:00:52 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/14 18:40:22 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,3 +23,4 @@ clean:
 fclean:
 	rm $(NAME)
 re: fclean all
+.PHONY: all clean fclean re

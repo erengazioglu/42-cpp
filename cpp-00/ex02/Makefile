@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/06/25 20:51:36 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/14 18:40:25 by egaziogl         ###   ########.fr        #
+#    Created: 2026/08/14 18:06:37 by egaziogl          #+#    #+#              #
+#    Updated: 2026/08/14 18:11:52 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
-NAME 	= phonebook
-SRC		= classes.cpp main.cpp print.cpp
+NAME 	= tests
+SRC		= Account.cpp tests.cpp
 
 all: $(NAME)
 

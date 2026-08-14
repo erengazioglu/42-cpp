@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 20:53:56 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 01:27:33 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/14 18:11:24 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,13 +133,12 @@ void	Account::displayStatus(void) const {
 
 void	Account::_displayTimestamp(void) {
 	char str[19];
-	str[18] = '\0';
 	time_t timestamp;
 	struct tm *datetime;
 	time(&timestamp);
 	datetime = localtime(&timestamp);
 	strftime(
-		str, 18, "[%Y%m%d_%H%M%S] ", datetime
+		str, 19, "[%Y%m%d_%H%M%S] ", datetime
 	);
 	std::cout << str;
 }
