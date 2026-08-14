@@ -14,3 +14,4 @@
 - [ ] Ltrim and rtrim user input
 - [ ] Accept lowercase user input for ADD/SEARCH/EXIT
 - [ ] Accept EXIT anywhere
+- [ ] Make sure you can't SEARCH for contact N if N doesn't exist
