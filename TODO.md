@@ -11,7 +11,7 @@
 - [x] Make `Contact` member variables private
 - [ ] If phonebook is full, have new contact override the 8th contact
 - [ ] Display "Last contact was overwritten" warning
-- [ ] Ltrim and rtrim user input
+- [x] Ltrim and rtrim user input
 - [ ] Accept lowercase user input for ADD/SEARCH/EXIT
-- [ ] Accept EXIT anywhere
+- [x] Accept EXIT anywhere
 - [x] Make sure you can't SEARCH for contact N if N doesn't exist
