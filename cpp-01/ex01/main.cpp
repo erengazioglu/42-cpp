@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:59:26 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 19:29:14 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 17:31:15 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@ int	main(void) {
 	for (int i = 0; i < 5; i++) {
 		zombs[i].announce();
 	}
-	for (int i = 0; i < 5; i++) {
-		delete (zombs + i);
-	}
-
+	delete[] zombs;
 }
