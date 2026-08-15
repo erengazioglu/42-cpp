@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:12:40 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 15:24:49 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 16:39:28 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ bool get_input(std::string prompt, std::string &str, bool accept_empty)
 	if (prompt.length()) std::cout << prompt << std::endl << RST;
 	if (!std::getline(std::cin, str)) return (false);
 	str = trim(str);
-	if (str == "EXIT") return (false);
+	if (to_upper(str) == "EXIT") return (false);
 	if (!accept_empty) {
 		while (str == "") {
 			std::cout << RED << "Please enter a valid string.\n" << RST;
 			if (prompt.length()) std::cout << BLU << prompt << std::endl << RST;
 			std::getline(std::cin, str);
 			str = trim(str);
-			if (str == "EXIT") return (false);
+			if (to_upper(str) == "EXIT") return (false);
 		}
 	}
 	return (true);
@@ -36,8 +36,9 @@ int main(void) {
 	if (!get_input("(ADD/SEARCH/EXIT)", user_input, true))
 		return (0);
 	Phonebook	book;
-	while (user_input != "EXIT")
+	while (true)
 	{
+		user_input = to_upper(user_input);
 		if (user_input == "ADD") {
 			if (!book.add()) return (0);
 		}

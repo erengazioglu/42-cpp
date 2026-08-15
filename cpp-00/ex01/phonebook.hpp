@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 15:20:32 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 16:32:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ std::ostream& operator<<(std::ostream& os, const Contact& contact);
 std::ostream& operator<<(std::ostream& os, const Phonebook& phonebook);
 bool get_input(std::string prompt, std::string &str, bool accept_empty = false);
 std::string	trim(std::string str);
+std::string to_upper(std::string str);
 void print_field(std::string field, bool is_last = false);
 
 #endif
