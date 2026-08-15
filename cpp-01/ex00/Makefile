@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 14:02:08 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/14 18:56:58 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/15 17:55:57 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,11 @@ SRC		= \
 		randomChump.cpp \
 		Zombie.cpp \
 		main.cpp
+DEP		= Zombie.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(DEP)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:

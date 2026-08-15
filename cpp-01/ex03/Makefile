@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/15 17:50:47 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/15 17:54:19 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/15 17:54:57 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ SRC		= \
 	HumanB.cpp \
 	Weapon.cpp \
 	main.cpp
-DEPS	= \
+DEP	= \
 	HumanA.hpp \
 	HumanB.hpp \
 	Weapon.hpp	
 
 all: $(NAME)
 
-$(NAME): $(SRC) $(DEPS)
+$(NAME): $(SRC) $(DEP)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:

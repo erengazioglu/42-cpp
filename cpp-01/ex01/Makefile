@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/07/23 14:02:08 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/14 19:24:17 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/15 17:56:22 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ SRC		= \
 		Zombie.cpp \
 		zombieHorde.cpp \
 		main.cpp
+DEP		= \
+		Zombie.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(DEP)
 	$(CC) $(SRC) -o $(NAME)
 clean:
 	@echo "Nothing to clean"

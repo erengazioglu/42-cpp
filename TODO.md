@@ -15,3 +15,18 @@
 - [x] Accept lowercase user input for ADD/SEARCH/EXIT
 - [x] Accept EXIT anywhere
 - [x] Make sure you can't SEARCH for contact N if N doesn't exist
+
+### ex02
+
+Nothing to add.
+
+## cpp-01
+
+### ex00
+
+Nothing to add.
+
+### ex01
+
+
+
