@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:48:40 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/16 01:36:04 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/16 01:43:45 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ int main() {
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	return 0;
 }
