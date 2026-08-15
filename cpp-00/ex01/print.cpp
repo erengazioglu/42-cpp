@@ -6,11 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 00:52:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 23:38:33 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 00:27:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+
+std::string	trim(std::string str) {
+	while (str.length() && str[0] == ' ')
+		str.erase(0, 1);
+	while (str.length() && str[str.length() - 1] == ' ')
+		str.erase(str.length() - 1, 1);
+	return str;
+}
 
 std::string	build_prompt(Phonebook& phonebook) {
 	int len = phonebook.length();

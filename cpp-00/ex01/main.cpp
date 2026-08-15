@@ -6,38 +6,46 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:12:40 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/10 21:33:16 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 15:24:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-std::string get_input(std::string prompt, bool accept_empty)
+bool get_input(std::string prompt, std::string &str, bool accept_empty)
 { 
-	std::string user_input = "";
 	std::cout << BLU;
 	if (prompt.length()) std::cout << prompt << std::endl << RST;
-	std::getline(std::cin, user_input);
+	if (!std::getline(std::cin, str)) return (false);
+	str = trim(str);
+	if (str == "EXIT") return (false);
 	if (!accept_empty) {
-		while (user_input == "") {
-			std::cout << RED << "Please enter a valid string." << RST;
-			if (prompt.length()) std::cout << prompt << std::endl << RST;
-			std::getline(std::cin, user_input);
+		while (str == "") {
+			std::cout << RED << "Please enter a valid string.\n" << RST;
+			if (prompt.length()) std::cout << BLU << prompt << std::endl << RST;
+			std::getline(std::cin, str);
+			str = trim(str);
+			if (str == "EXIT") return (false);
 		}
 	}
-	return (user_input);
+	return (true);
 }
 
 int main(void) {
-	std::string	user_input = get_input("(ADD/SEARCH/EXIT)", true);
+	std::string user_input;
+	if (!get_input("(ADD/SEARCH/EXIT)", user_input, true))
+		return (0);
 	Phonebook	book;
 	while (user_input != "EXIT")
 	{
-		if (user_input == "ADD")
-			book.add();
-		else if (user_input == "SEARCH")
-			book.search();
-		user_input = get_input("(ADD/SEARCH/EXIT)", true);
+		if (user_input == "ADD") {
+			if (!book.add()) return (0);
+		}
+		else if (user_input == "SEARCH") {
+			if (!book.search()) return (0);
+		}
+		if (!get_input("(ADD/SEARCH/EXIT)", user_input, true))
+			return (0);
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 23:41:57 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 15:13:40 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,11 @@ struct Fields	Contact::get_fields(void) const {
 	return fields;
 }
 
-Contact&	Phonebook::get_contact(int i)
-{
+Contact&	Phonebook::get_contact(int i) {
 	return _contacts[i];
 }
 
-const Contact&	Phonebook::get_contact(int i) const
-{
+const Contact&	Phonebook::get_contact(int i) const {
 	return _contacts[i];
 }
 
@@ -57,40 +55,45 @@ int		Phonebook::length() const {
 	return (i);
 }
 
-void	Phonebook::add()
+bool	Phonebook::add()
 {
 	int i = length();
 	struct Fields fields;
 	if (i == 8) {
 		std::cout << RED << "Phonebook is full. Cannot add more contacts." << RST << std::endl;
-		return ;
+		return (true);
 	}
 	Contact& contact = get_contact(i);
-	fields.fname = get_input("First name:");
-	fields.lname = get_input("Last name:");
-	fields.nname = get_input("Nickname:");
-	fields.phone = get_input("Phone number:");
-	fields.secret = get_input("Darkest secret:");
+	if (
+		!get_input("First name:", fields.fname)
+		|| !get_input("Last name:", fields.lname)
+		|| !get_input("Nickname:", fields.nname)
+		|| !get_input("Phone number:", fields.phone)
+		|| !get_input("Darkest secret:", fields.secret)
+	 ) return (false);
 	contact = Contact(fields);
 	std::cout << GRN << "Contact added successfully.\n" << RST;
+	return (true);
 }
 
-void	Phonebook::search()
+bool	Phonebook::search()
 {
 	int len = length();
 	if (len == 0) {
 		std::cout << RED << "Phonebook is empty. Please add some contacts first." \
 			<< RST << std::endl;
-		return ;
+		return (true);
 	}
 	std::cout << *this;
 	std::string prompt = build_prompt(*this);
-	std::string user_input = get_input(prompt);
+	std::string user_input;
+	if (!get_input(prompt, user_input)) return (false);
 	int i = user_input[0] - '0';
 	while (user_input.length() != 1 || i < 0 || i >= len) {
 		std::cout << RED << "Please enter a valid index." << RST << std::endl;
-		user_input = get_input(prompt);
+		if (!get_input(prompt, user_input)) return (false);
 		i = user_input[0] - '0';
 	}
 	std::cout << get_contact(i);
+	return (true);
 }
