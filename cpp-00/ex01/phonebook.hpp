@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 18:35:00 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 16:41:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 16:58:31 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ class Contact {
 
 class Phonebook {
 	public:
+		Phonebook();
 		Contact& get_contact(int i);
 		const Contact& get_contact(int i) const;
 		bool	add(void);
@@ -56,6 +57,7 @@ class Phonebook {
 		int		length(void)	const;
 	private:
 		Contact _contacts[8];
+		int	_oldest_index;
 };
 
 std::string	build_prompt(Phonebook& phonebook);

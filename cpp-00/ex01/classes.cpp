@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 15:13:40 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 16:58:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ struct Fields	Contact::get_fields(void) const {
 	return fields;
 }
 
+Phonebook::Phonebook() {
+	_oldest_index = 0;
+}
+
 Contact&	Phonebook::get_contact(int i) {
 	return _contacts[i];
 }
@@ -60,8 +64,12 @@ bool	Phonebook::add()
 	int i = length();
 	struct Fields fields;
 	if (i == 8) {
-		std::cout << RED << "Phonebook is full. Cannot add more contacts." << RST << std::endl;
-		return (true);
+		i = _oldest_index;
+		std::cout << YEL \
+		<< "Warning: Phonebook is full, " \
+		<< "the oldest contact (" << i \
+		<< ") will be overwritten.\n" << RST;
+		_oldest_index++;
 	}
 	Contact& contact = get_contact(i);
 	if (
