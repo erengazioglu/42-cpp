@@ -6,20 +6,18 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:53:57 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 18:19:12 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/16 01:34:21 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "Weapon.hpp"
+#include <iostream>
 
-HumanA::HumanA() {
-	_name = "";
-	_weapon = Weapon("default");
+HumanA::HumanA(std::string name, Weapon &weapon)
+	: _name(name), _weapon(weapon) {
 }
 
-HumanA::HumanA(std::string name, Weapon &weapon) {
-	_name = name;
-	_weapon = weapon;
+void HumanA::attack(void) {
+	std::cout << _name << " attacks with their " << _weapon.getType() << "\n";
 }
-
