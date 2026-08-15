@@ -6,7 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:54:01 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 17:54:02 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 18:18:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+#include "Weapon.hpp"
+
+class HumanA {
+	public:
+		HumanA();
+		HumanA(std::string name, Weapon &weapon);
+		void	attack(void);
+	private:
+		std::string	_name;
+		Weapon		_weapon;
+};
