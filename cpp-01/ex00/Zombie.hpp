@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:44:09 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 19:06:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 17:25:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Zombie {
 	public:
 		Zombie();
 		~Zombie();
-		void	announce(void);
+		void		announce(void);
 		std::string	get_name(void);
 		void		set_name(std::string name);
 
@@ -37,6 +37,6 @@ class Zombie {
 };
 
 Zombie*	newZombie(std::string name);
-void randomChump(std::string name);
+void	randomChump(std::string name);
 
 #endif
