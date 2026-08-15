@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:12:40 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 16:39:28 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/15 16:44:52 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ bool get_input(std::string prompt, std::string &str, bool accept_empty)
 
 int main(void) {
 	std::string user_input;
+	std::cout << YEL \
+		<< "NOTE | You can:\n"
+		<< "- type 'EXIT' at any point to quit the program,\n" \
+		<< "- type your commands in lowercase,\n" \
+		<< "- have leading or trailing whitespace in your commands.\n";
 	if (!get_input("(ADD/SEARCH/EXIT)", user_input, true))
 		return (0);
 	Phonebook	book;
