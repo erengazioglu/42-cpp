@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 02:54:26 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/16 02:55:55 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/16 12:38:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 
 # include <fstream>
 # include <iostream>
+# include <sstream>
 
 #endif
