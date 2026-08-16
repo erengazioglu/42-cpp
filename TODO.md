@@ -5,6 +5,7 @@
 ### ex00
 
 - [x] Add 42 header
+- [ ] Check header protection
 
 ### ex01
 
@@ -15,18 +16,29 @@
 - [x] Accept lowercase user input for ADD/SEARCH/EXIT
 - [x] Accept EXIT anywhere
 - [x] Make sure you can't SEARCH for contact N if N doesn't exist
+- [ ] Check header protection
+
 
 ### ex02
 
-Nothing to add.
+- [ ] Check header protection
 
 ## cpp-01
 
 ### ex00
 
-Nothing to add.
+- [ ] Check header protection
 
 ### ex01
 
+- [ ] Check header protection
+
+### ex02
+
+- [ ] Check header protection
+
+### ex03
+
+- [ ] Check header protection
 
 
