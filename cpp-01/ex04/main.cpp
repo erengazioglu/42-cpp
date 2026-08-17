@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:52:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/17 02:23:19 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 02:27:32 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ bool	open_write(int argc, char **argv, std::ofstream &f_out) {
 	return true;
 }
 
+void	read_file(std::ifstream &f_in, std::string &str) {
+	std::ostringstream 	oss;
+	while (std::getline(f_in, str))
+		oss << str << std::endl;
+	str = oss.str();
+	f_in.close();
+}
+
 int	main(int argc, char **argv) {
 	std::ifstream f_in;
 	std::ofstream f_out;
@@ -50,11 +58,7 @@ int	main(int argc, char **argv) {
 		return (f_in.close(), 1);
 
 	std::string 		str;
-	std::ostringstream 	oss;
-	while (std::getline(f_in, str))
-		oss << str << std::endl;
-	str = oss.str();
-	f_in.close();
+	read_file(f_in, str);
 
 	std::size_t	i = str.find(argv[2]);
 	std::size_t len = std::string(argv[2]).length();
