@@ -6,32 +6,47 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:52:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/16 12:53:09 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 02:09:09 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sedpp.hpp"
 
-int	main(int argc, char **argv) {
+bool	open_read(int argc, char **argv, std::ifstream &f_in) {
 	if (argc != 4) {
 		std::cout << RED << "Usage: ./sedpp <filename> <s1> <s2>\n";
-		return 1;
+		return false;
 	}
 	if (argv[1][0] == '\0') {
 		std::cout << RED << "Filename cannot be empty.\n";
-		return 1;
+		return false;
 	}
-	std::ifstream f_in(argv[1]);
+	f_in.open(argv[1]);
 	if (!f_in.good()) {
 		std::cout << RED << "File can't be read. Does it exist?\n";
-		return 1;
+		return false;
 	}
-	std::ostringstream f_name;
-	f_name << argv[1] << ".replace";
-	std::ofstream f_out(f_name.str().c_str());
+	return true;
+}
+
+bool	open_write(int argc, char **argv, std::ofstream &f_out) {
+	(void) argc;
+	std::string f_name(argv[1]);
+	f_name += ".replace";
+	f_out.open(f_name.c_str());
 	if (!f_out.is_open()) {
-		std::cout << RED << "Couldn't create " << f_name.str() << ", check file permissions.\n";
-		return 1;
+		std::cout << RED << "Couldn't create " << f_name << ", check file permissions.\n";
+		return false;
 	}
+	return true;
+}
+
+int	main(int argc, char **argv) {
+	std::ifstream f_in;
+	std::ofstream f_out;
+	if (!open_read(argc, argv, f_in))
+		return (1);
+	if (!open_write(argc, argv, f_out))
+		return (f_in.close(), 1);
 	return 0;
 }
