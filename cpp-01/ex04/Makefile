@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/16 01:50:18 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/17 19:56:49 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/17 19:59:45 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,11 @@ tests:
 	./$(NAME) test2.txt hello hey
 	./$(NAME) test3.txt "" hey
 	./$(NAME) test4.txt hola hey
+	./$(NAME) test5.txt "" ""
+	./$(NAME) test6.txt hola hey
+	./$(NAME) test7.txt "" ""
+	./$(NAME) test7.txt hola hey
+	./$(NAME) test8.txt " " ""
 
 clean:
 	rm -f test*.txt test*.txt.replace
