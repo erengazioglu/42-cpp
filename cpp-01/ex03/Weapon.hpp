@@ -6,12 +6,15 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:46:55 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/16 01:45:23 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 18:55:02 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
+#ifndef WEAPON_H
+# define WEAPON_H
+
+# pragma once
+# include <string>
 
 class Weapon {
 	public:
@@ -22,3 +25,5 @@ class Weapon {
 	private: 
 		std::string _type;
 };
+
+#endif
