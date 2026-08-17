@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:52:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/17 04:54:36 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 18:59:15 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 bool	open_read(int argc, char **argv, std::ifstream &f_in) {
 	if (argc != 4) {
-		std::cout << RED << "Usage: ./sedpp <filename> <s1> <s2>\n";
+		std::cout << RED << "Usage: ./sedpp <filename> <s1> <s2>\n" << RST;
 		return false;
 	}
 	if (argv[1][0] == '\0') {
-		std::cout << RED << "Filename cannot be empty.\n";
+		std::cout << RED << "Filename cannot be empty.\n" << RST;
 		return false;
 	}
 	f_in.open(argv[1]);
@@ -35,7 +35,7 @@ bool	open_write(int argc, char **argv, std::ofstream &f_out) {
 	f_name += ".replace";
 	f_out.open(f_name.c_str());
 	if (!f_out.is_open()) {
-		std::cout << RED << "Couldn't create " << f_name << ", check file permissions.\n";
+		std::cout << RED << "Couldn't create " << f_name << ", check file permissions.\n" << RST;
 		return false;
 	}
 	return true;

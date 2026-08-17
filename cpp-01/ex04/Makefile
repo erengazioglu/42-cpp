@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/16 01:50:18 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/17 17:53:01 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/17 19:01:03 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC		= \
 	main.cpp
 DEP	= \
 	sedpp.hpp
+RMFILES = 1 2 3 4 5 6 7 8
 
 all: $(NAME) tests
 
@@ -44,8 +45,8 @@ tests:
 	./$(NAME) test4.txt hola hey
 
 clean:
-	@echo "Nothing to clean"
-fclean:
+	rm test${RMFILES}.txt test${RMFILES}.txt.replace
+fclean: clean
 	rm $(NAME)
 re: fclean all
 .PHONY: all clean fclean re tests
