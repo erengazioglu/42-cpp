@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 00:13:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/15 16:58:50 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 17:26:22 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ bool	Phonebook::add()
 		<< "Warning: Phonebook is full, " \
 		<< "the oldest contact (" << i \
 		<< ") will be overwritten.\n" << RST;
-		_oldest_index++;
+		_oldest_index = (_oldest_index + 1) % 8;
 	}
 	Contact& contact = get_contact(i);
 	if (
