@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/16 01:50:18 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/16 02:55:58 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/17 17:53:01 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,35 @@ SRC		= \
 DEP	= \
 	sedpp.hpp
 
-all: $(NAME)
+all: $(NAME) tests
 
 $(NAME): $(SRC) $(DEP)
 	$(CC) $(SRC) -o $(NAME)
+
+tests:
+	@echo --- Creating files...
+	@echo "hello" > test1.txt
+	@echo "hello world" > text2.txt
+	@echo "hello world" > test3.txt
+	@echo "hello world" > test4.txt
+	@echo "" > test5.txt
+	@echo "" > test6.txt
+	@touch test7.txt test8.txt
+	@chmod a-rwx test8.txt
+	@echo --- Testing...
+	./$(NAME)
+	./$(NAME) test1.txt
+	./$(NAME) test1.txt hey
+	./$(NAME) test0.txt
+	./$(NAME) test1.txt hello hello
+	./$(NAME) test1.txt hello hey
+	./$(NAME) test2.txt hello hey
+	./$(NAME) test3.txt "" hey
+	./$(NAME) test4.txt hola hey
 
 clean:
 	@echo "Nothing to clean"
 fclean:
 	rm $(NAME)
 re: fclean all
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re tests
