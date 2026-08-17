@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:52:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/17 02:27:32 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 04:54:36 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ int	main(int argc, char **argv) {
 		return (1);
 	if (!open_write(argc, argv, f_out))
 		return (f_in.close(), 1);
-
-	std::string 		str;
+	
+	std::string str;
 	read_file(f_in, str);
 
-	std::size_t	i = str.find(argv[2]);
 	std::size_t len = std::string(argv[2]).length();
+	std::size_t	i = str.find(argv[2]);
 	while (i != std::string::npos) {
 		f_out << str.substr(0, i) << argv[3];
 		str.erase(0, i + len);
