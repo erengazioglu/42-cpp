@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/16 01:50:18 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/17 19:01:03 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/17 19:49:15 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ tests:
 	./$(NAME) test4.txt hola hey
 
 clean:
-	rm test${RMFILES}.txt test${RMFILES}.txt.replace
+	rm -f test*.txt test*.replace
 fclean: clean
 	rm $(NAME)
 re: fclean all
