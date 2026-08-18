@@ -6,16 +6,17 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/17 18:58:05 by egaziogl          #+#    #+#              #
-#    Updated: 2026/08/17 18:58:25 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/08/18 18:00:26 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
-NAME 	= sedpp
+NAME 	= harl
 SRC		= \
-	main.cpp
+	main.cpp \
+	Harl.cpp
 DEP	= \
-	sedpp.hpp
+	Harl.hpp
 
 all: $(NAME)
 
