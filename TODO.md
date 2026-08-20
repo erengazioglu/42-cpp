@@ -46,4 +46,4 @@
 ### ex00
 
 - [ ] Skim the articles in subject pdf
-- [ ]
+- [ ] Write copy assignment operator

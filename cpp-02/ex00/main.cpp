@@ -6,12 +6,11 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:36 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/20 15:29:39 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/20 15:32:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int main() {
 	Fixed point;
