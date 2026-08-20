@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/20 15:44:03 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/20 17:35:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Fixed::Fixed() {
 	_fixed = 0;
 }
 
-Fixed::Fixed(Fixed& src) {
+Fixed::Fixed(const Fixed& src) {
 	std::cout << BLU << "Copy constructor called\n" << RST;
 	_fixed = src.getRawBits();
 }
