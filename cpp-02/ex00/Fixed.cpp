@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/20 17:35:16 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/20 17:44:20 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ Fixed::~Fixed() {
 	std::cout << BLU << "Destructor called\n" << RST;
 }
 
+Fixed& Fixed::operator=(const Fixed& src) {
+	std::cout << BLU << "Copy assignment operator called\n" << RST;
+	this->_fixed = src.getRawBits();
+	return *this;
+}
+
 int Fixed::getRawBits(void) const {
+	std::cout << MAG << "getRawBits member function called\n" << RST;
 	return _fixed;
 }
 
