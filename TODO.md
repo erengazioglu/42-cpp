@@ -46,4 +46,10 @@
 ### ex00
 
 - [ ] Skim the articles in subject pdf
-- [ ] Write copy assignment operator
+- [x] Write copy assignment operator
+
+### ex01
+
+- [ ] Write `toFloat` and `toInt`
+- [ ] Write float and int constructors
+- [ ] Copy new main
