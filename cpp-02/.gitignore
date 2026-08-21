@@ -1,0 +1,6 @@
+*test.cpp
+*.out
+
+# EXECUTABLES
+ex00/fixed
+ex01/fixed

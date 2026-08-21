@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:52:31 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/17 18:59:15 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/17 19:56:40 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	open_read(int argc, char **argv, std::ifstream &f_in) {
 	}
 	f_in.open(argv[1]);
 	if (!f_in.good()) {
-		std::cout << RED << "File can't be read. Does it exist?\n";
+		std::cout << RED << "File can't be read. Does it exist?\n" << RST;
 		return false;
 	}
 	return true;
@@ -60,12 +60,14 @@ int	main(int argc, char **argv) {
 	std::string str;
 	read_file(f_in, str);
 
-	std::size_t len = std::string(argv[2]).length();
-	std::size_t	i = str.find(argv[2]);
-	while (i != std::string::npos) {
-		f_out << str.substr(0, i) << argv[3];
-		str.erase(0, i + len);
-		i = str.find(argv[2]);
+	if (argv[2][0]) {
+		std::size_t len = std::string(argv[2]).length();
+		std::size_t	i = str.find(argv[2]);
+		while (i != std::string::npos) {
+			f_out << str.substr(0, i) << argv[3];
+			str.erase(0, i + len);
+			i = str.find(argv[2]);
+		}
 	}
 	f_out << str;
 	f_out.close();
