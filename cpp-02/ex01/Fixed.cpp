@@ -6,11 +6,14 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/20 18:01:52 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/25 15:23:15 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+// ___
+// Constructors
 
 Fixed::Fixed() {
 	std::cout << BLU << "Default constructor called\n" << RST;
@@ -22,15 +25,49 @@ Fixed::Fixed(const Fixed& src) {
 	_fixed = src.getRawBits();
 }
 
+Fixed::Fixed(const int i) {
+	std::cout << BLU << "Int constructor called\n" << RST;
+	_fixed = i * (1 << _fract);
+}
+
+Fixed::Fixed(const float f) {
+	std::cout << BLU << "Float constructor called\n" << RST;
+	_fixed = (int) roundf(f * (1 << _fract));
+}
+
+
+// ___
+// Destructor
+
 Fixed::~Fixed() {
 	std::cout << BLU << "Destructor called\n" << RST;
 }
+
+
+// ___
+// Copy
 
 Fixed& Fixed::operator=(const Fixed& src) {
 	std::cout << BLU << "Copy assignment operator called\n" << RST;
 	_fixed = src.getRawBits();
 	return *this;
 }
+
+
+// ___
+// Converters
+
+int	Fixed::toInt(void) const {
+	return _fixed / (1 << _fract);
+}
+
+float	Fixed::toFloat(void) const {
+	return (float) _fixed / (1 << _fract);
+}
+
+
+// ___
+// Setget
 
 int Fixed::getRawBits(void) const {
 	std::cout << MAG << "getRawBits member function called\n" << RST;

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/20 18:01:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/25 13:58:10 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FIXED_H
 
 # include <iostream>
-// # include <iomanip>
+# include <cmath>
 
 # define RED "\033[31m"
 # define GRN "\033[32m"
@@ -40,6 +40,9 @@ class Fixed {
 		static const int _fract = 8;
 		int _fixed;
 };
+
+// represents:
+// 00000000 00000000 00000000 . 00000000
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
