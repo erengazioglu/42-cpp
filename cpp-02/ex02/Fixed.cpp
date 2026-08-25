@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 15:32:46 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/25 15:47:53 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,24 @@ Fixed& Fixed::operator=(const Fixed& src) {
 // ___
 // Comparison operators
 
-bool	Fixed::operator<(const Fixed& l, const Fixed& r)
-
+bool	Fixed::operator<(const Fixed& f) {
+	return _fixed < f.getRawBits();
+}
+bool	Fixed::operator<=(const Fixed& f) {
+	return _fixed <= f.getRawBits();
+}
+bool	Fixed::operator>(const Fixed& f) {
+	return _fixed > f.getRawBits();
+}
+bool	Fixed::operator>=(const Fixed& f) {
+	return _fixed >= f.getRawBits();
+}
+bool	Fixed::operator==(const Fixed& f) {
+	return _fixed == f.getRawBits();
+}
+bool	Fixed::operator!=(const Fixed& f) {
+	return _fixed != f.getRawBits();
+}
 
 // ___
 // Converters
@@ -75,7 +91,6 @@ float	Fixed::toFloat(void) const {
 // Setget
 
 int Fixed::getRawBits(void) const {
-	std::cout << MAG << "getRawBits member function called\n" << RST;
 	return _fixed;
 }
 
