@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 15:47:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 01:07:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,40 @@ Fixed& Fixed::operator=(const Fixed& src) {
 // ___
 // Comparison operators
 
-bool	Fixed::operator<(const Fixed& f) {
+bool	Fixed::operator<(const Fixed& f) const {
 	return _fixed < f.getRawBits();
 }
-bool	Fixed::operator<=(const Fixed& f) {
+bool	Fixed::operator<=(const Fixed& f) const {
 	return _fixed <= f.getRawBits();
 }
-bool	Fixed::operator>(const Fixed& f) {
+bool	Fixed::operator>(const Fixed& f) const {
 	return _fixed > f.getRawBits();
 }
-bool	Fixed::operator>=(const Fixed& f) {
+bool	Fixed::operator>=(const Fixed& f) const {
 	return _fixed >= f.getRawBits();
 }
-bool	Fixed::operator==(const Fixed& f) {
+bool	Fixed::operator==(const Fixed& f) const {
 	return _fixed == f.getRawBits();
 }
-bool	Fixed::operator!=(const Fixed& f) {
+bool	Fixed::operator!=(const Fixed& f) const {
 	return _fixed != f.getRawBits();
+}
+
+Fixed	Fixed::operator+(const Fixed& f) const {
+	return Fixed((float) (_fixed + f.getRawBits()) / (1 << _fract));
+}
+Fixed	Fixed::operator-(const Fixed& f) const {
+	return Fixed((float) (_fixed - f.getRawBits()) / (1 << _fract));
+}
+Fixed	Fixed::operator*(const Fixed& f) const {
+	Fixed result;
+	result.setRawBits(_fixed * f.getRawBits() / (1 << _fract));
+	return result;
+}
+Fixed	Fixed::operator/(const Fixed& f) const {
+	Fixed result;
+	result.setRawBits(_fixed / f.getRawBits() * (1 << _fract));
+	return result;
 }
 
 // ___
