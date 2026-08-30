@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 23:06:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 10:56:45 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 19:19:53 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ Point Point::operator-(const Point& src) const {
 		_x - src.get_x(),
 		_y - src.get_y()
 	);
+}
+int	Point::operator*(const Point& src) const {
+	return (_x * src.get_y() - _y * src.get_x()).toInt();
 }
 
 std::ostream& operator<<(std::ostream& os, const Point& point) {
