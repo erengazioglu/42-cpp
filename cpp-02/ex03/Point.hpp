@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/29 22:53:14 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/29 23:17:21 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 10:38:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ class Point {
 		Point(const Point&);
 		Point(const Fixed& x, const Fixed& y);
 		~Point();
+
 		Point&	operator=(const Point&);
+		Point	operator+(const Point&) const;
+		int		operator*(const Point&) const;
 		
 		const Fixed& get_x(void) const;
 		const Fixed& get_y(void) const;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed2.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 15:47:53 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/08/30 10:40:48 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/08/30 10:40:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 // Constructors
 
 Fixed::Fixed() {
-	std::cout << BLU << "Default constructor called\n" << RST;
+	// std::cout << BLU << "Default constructor called\n" << RST;
 	_fixed = 0;
 }
 
 Fixed::Fixed(const Fixed& src) {
-	std::cout << BLU << "Copy constructor called\n" << RST;
+	// std::cout << BLU << "Copy constructor called\n" << RST;
 	_fixed = src.getRawBits();
 }
 
 Fixed::Fixed(const int i) {
-	std::cout << BLU << "Int constructor called\n" << RST;
+	// std::cout << BLU << "Int constructor called\n" << RST;
 	_fixed = i * (1 << _fract);
 }
 
 Fixed::Fixed(const float f) {
-	std::cout << BLU << "Float constructor called\n" << RST;
+	// std::cout << BLU << "Float constructor called\n" << RST;
 	_fixed = (int) roundf(f * (1 << _fract));
 }
 
@@ -40,7 +40,7 @@ Fixed::Fixed(const float f) {
 // Destructor
 
 Fixed::~Fixed() {
-	std::cout << BLU << "Destructor called\n" << RST;
+	// std::cout << BLU << "Destructor called\n" << RST;
 }
 
 
@@ -56,23 +56,61 @@ Fixed& Fixed::operator=(const Fixed& src) {
 // ___
 // Comparison operators
 
-bool	Fixed::operator<(const Fixed& f) {
+bool	Fixed::operator<(const Fixed& f) const {
 	return _fixed < f.getRawBits();
 }
-bool	Fixed::operator<=(const Fixed& f) {
+bool	Fixed::operator<=(const Fixed& f) const {
 	return _fixed <= f.getRawBits();
 }
-bool	Fixed::operator>(const Fixed& f) {
+bool	Fixed::operator>(const Fixed& f) const {
 	return _fixed > f.getRawBits();
 }
-bool	Fixed::operator>=(const Fixed& f) {
+bool	Fixed::operator>=(const Fixed& f) const {
 	return _fixed >= f.getRawBits();
 }
-bool	Fixed::operator==(const Fixed& f) {
+bool	Fixed::operator==(const Fixed& f) const {
 	return _fixed == f.getRawBits();
 }
-bool	Fixed::operator!=(const Fixed& f) {
+bool	Fixed::operator!=(const Fixed& f) const {
 	return _fixed != f.getRawBits();
+}
+
+// ---
+// Arithmetic operators
+
+Fixed	Fixed::operator+(const Fixed& f) const {
+	return Fixed((float) (_fixed + f.getRawBits()) / (1 << _fract));
+}
+Fixed	Fixed::operator-(const Fixed& f) const {
+	return Fixed((float) (_fixed - f.getRawBits()) / (1 << _fract));
+}
+Fixed	Fixed::operator*(const Fixed& f) const {
+	Fixed result;
+	result.setRawBits(_fixed * f.getRawBits() / (1 << _fract));
+	return result;
+}
+Fixed	Fixed::operator/(const Fixed& f) const {
+	Fixed result;
+	result.setRawBits(_fixed / f.getRawBits() * (1 << _fract));
+	return result;
+}
+Fixed&	Fixed::operator++(void) {
+	_fixed += 1;
+	return *this;
+}
+Fixed	Fixed::operator++(int) {
+	Fixed retval = *this;
+	_fixed += 1;
+	return retval;
+}
+Fixed&	Fixed::operator--(void) {
+	_fixed -= 1;
+	return *this;
+}
+Fixed	Fixed::operator--(int) {
+	Fixed retval = *this;
+	_fixed -= 1;
+	return retval;
 }
 
 // ___
