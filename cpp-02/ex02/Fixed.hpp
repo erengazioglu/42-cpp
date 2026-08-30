@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 00:39:36 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 10:23:45 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ class Fixed {
 		Fixed	operator*(const Fixed&)		const;
 		Fixed	operator/(const Fixed&)		const;
 		Fixed&	operator++(void);
+		Fixed	operator++(int);
 		Fixed&	operator--(void);
+		Fixed	operator--(int);
 
 		static Fixed&	min(Fixed&, Fixed&);
 		static Fixed&	min(const Fixed&, const Fixed&);

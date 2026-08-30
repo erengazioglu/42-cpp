@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:36 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 01:08:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 10:25:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ int main() {
 	std::cout << "c - d: " << c - d << std::endl;
 	std::cout << "d / e: " << d / e << std::endl;
 	std::cout << "d * e: " << d * e << std::endl;
+	std::cout << "d++:   " << d++ << std::endl;
+	std::cout << "++d:   " << ++d << std::endl;
+	std::cout << "d--:   " << d-- << std::endl;
+	std::cout << "--d:   " << --d << std::endl;
 }
