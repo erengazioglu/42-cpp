@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 10:26:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/30 10:29:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,21 +95,21 @@ Fixed	Fixed::operator/(const Fixed& f) const {
 	return result;
 }
 Fixed&	Fixed::operator++(void) {
-	_fixed += 1 << _fract;
+	_fixed += 1;
 	return *this;
 }
 Fixed	Fixed::operator++(int) {
 	Fixed retval = *this;
-	_fixed += 1 << _fract;
+	_fixed += 1;
 	return retval;
 }
 Fixed&	Fixed::operator--(void) {
-	_fixed -= 1 << _fract;
+	_fixed -= 1;
 	return *this;
 }
 Fixed	Fixed::operator--(int) {
 	Fixed retval = *this;
-	_fixed -= 1 << _fract;
+	_fixed -= 1;
 	return retval;
 }
 
