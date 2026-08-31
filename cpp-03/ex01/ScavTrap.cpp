@@ -6,10 +6,12 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/31 01:13:39 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/31 01:53:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {}
+ScavTrap::ScavTrap(std::string name) 
+	: ClapTrap(name, 100, 50, 20) {}
+

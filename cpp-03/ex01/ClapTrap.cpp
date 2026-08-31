@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:08:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 23:44:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/31 01:53:29 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hp(10), _ep(10), _dmg(0) {
+	std::cout << BLU << "ClapTrap | Custom constructor\n" << RST;
+}
+
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int dmg)
+	: _name(name), _hp(hp), _ep(ep), _dmg(dmg) {
 	std::cout << BLU << "ClapTrap | Custom constructor\n" << RST;
 }
 

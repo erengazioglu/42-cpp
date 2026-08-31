@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:09:08 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 23:34:40 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/08/31 01:53:01 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class ClapTrap {
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, int hp, int ep, int dmg);
 		ClapTrap(const ClapTrap&);
 		~ClapTrap();
 		ClapTrap&	operator=(const ClapTrap&);
