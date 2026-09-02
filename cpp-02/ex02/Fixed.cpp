@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/30 10:29:33 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 16:56:02 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,23 @@ Fixed	Fixed::operator--(int) {
 	_fixed -= 1;
 	return retval;
 }
+
+// ___
+// Min/max
+
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+	return (a <= b ? a : b);
+}
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+	return (a <= b ? a : b);
+}
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
+	return (a >= b ? a : b);
+}
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+	return (a >= b ? a : b);
+}
+
 
 // ___
 // Converters
