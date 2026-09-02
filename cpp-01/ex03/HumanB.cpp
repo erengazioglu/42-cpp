@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 01:36:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/16 01:43:11 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 15:56:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void HumanB::attack(void) {
 		std::cout << " attacks with their bare hands!\n";
 		return ;
 	}
-	std::cout << " attacks with their " << _weapon->getType() << "\n";
+	std::cout << " attacks with their " << _weapon->getType() << std::endl;
 }

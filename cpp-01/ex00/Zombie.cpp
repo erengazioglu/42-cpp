@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/23 13:47:04 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/14 19:05:08 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 15:57:19 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ Zombie::Zombie() {
 }
 Zombie::~Zombie() {
 	std::cout << RED \
-		<< "Zombie \"" << _name << "\" has been destroyed.\n" \
-		<< RST;
+		<< "Zombie \"" << _name << "\" has been destroyed." \
+		<< std::endl << RST;
 }
 void	Zombie::set_name(std::string name) {
 	_name = name;
@@ -28,5 +28,5 @@ std::string	Zombie::get_name(void) {
 }
 
 void Zombie::announce(void) {
-	std::cout << get_name() << ": BraiiiiiiinnnzzzZ...\n";
+	std::cout << get_name() << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 17:46:55 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/17 18:55:02 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 15:53:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon {
 		Weapon();
 		Weapon(std::string type);
 		const std::string& getType(void);
-		void		setType(std::string type);
+		void	setType(std::string type);
 	private: 
 		std::string _type;
 };
