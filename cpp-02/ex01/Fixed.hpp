@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:34 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 13:58:10 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 16:30:28 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Fixed {
 		Fixed(const int);
 		Fixed(const float);
 		~Fixed();
-		Fixed& operator=(const Fixed& src);
+		Fixed&	operator=(const Fixed& src);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;

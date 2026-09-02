@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:32 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 15:23:15 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 16:35:18 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ float	Fixed::toFloat(void) const {
 // Setget
 
 int Fixed::getRawBits(void) const {
-	std::cout << MAG << "getRawBits member function called\n" << RST;
+	// std::cout << MAG << "getRawBits member function called\n" << RST;
 	return _fixed;
 }
 

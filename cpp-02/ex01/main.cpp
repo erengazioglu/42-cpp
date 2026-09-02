@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 15:05:36 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/08/25 14:06:46 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/02 16:36:22 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ int main() {
 
 	a = Fixed( 1234.4321f );
 
-	std::cout << "a is " << a << std::endl; 
-	std::cout << "b is " << b << std::endl; 
-	std::cout << "c is " << c << std::endl; 
-	std::cout << "d is " << d << std::endl;
+	std::cout << "a: " << a << std::endl; 
+	std::cout << "b: " << b << std::endl; 
+	std::cout << "c: " << c << std::endl; 
+	std::cout << "d: " << d << std::endl;
 
-	std::cout << "(int) a: " << a.toInt() << std::endl; 
-	std::cout << "(int) b: " << b.toInt() << std::endl; 
-	std::cout << "(int) c: " << c.toInt() << std::endl; 
-	std::cout << "(int) d: " << d.toInt() << std::endl;
+	std::cout << "a (as int): " << a.toInt() << std::endl; 
+	std::cout << "b (as int): " << b.toInt() << std::endl; 
+	std::cout << "c (as int): " << c.toInt() << std::endl; 
+	std::cout << "d (as int): " << d.toInt() << std::endl;
 
 	return 0;
 }
