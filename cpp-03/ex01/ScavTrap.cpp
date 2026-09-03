@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 15:06:57 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:13:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,10 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::~ScavTrap() {
 	std::cout << RED << "ScavTrap | Destructor\n" << RST;
 	_class_name = "ScavTrap";
+}
+
+void ScavTrap::guardGate() {
+	std::cout \
+	<< _class_name << " " << _name \
+	<< " is in gate keeper mode.\n";
 }
