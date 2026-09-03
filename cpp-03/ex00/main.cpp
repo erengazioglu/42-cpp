@@ -6,22 +6,23 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:18:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/02 17:54:07 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/03 16:08:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 int main(void) {
-	ClapTrap	a("Jambo");
-	ClapTrap	b;
+	ClapTrap	clap_a("Jambo");
+	ClapTrap	clap_b;
 
-	a.attack("Ugali");
-	a.takeDamage(5);
-	a.beRepaired(10);
-	b = a;
-	std::cout << "b._hp = " << b.get_hp() << std::endl;
+	clap_a.attack("Ugali");
+	clap_a.takeDamage(5);
+	clap_a.beRepaired(10);
+	clap_b = clap_a;
+	std::cout << "clap_b._ep = " << clap_b.get_ep() << std::endl;
 	for (int i = 0; i < 9; i++) {
-		a.attack("Ugali");
+		clap_b.attack("Ugali");
 	}
+	std::cout << "clap_a._ep = " << clap_a.get_ep() << std::endl;
 }

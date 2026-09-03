@@ -1,0 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/30 23:09:08 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/09/03 15:01:30 by egaziogl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
+
+# define RED "\033[31m"
+# define GRN "\033[32m"
+# define YEL "\033[33m"
+# define BLU "\033[34m"
+# define MAG "\033[35m"
+# define CYN "\033[36m"
+# define RST "\033[0m"
+
+# include <string>
+# include <iostream>
+
+class ClapTrap {
+	public:
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap&);
+		ClapTrap(std::string name, int hp, int ep, int dmg);
+		~ClapTrap();
+		ClapTrap&	operator=(const ClapTrap&);
+		
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+
+		std::string get_name(void)	const;
+		int get_hp(void)			const;
+		int get_ep(void)			const;
+		int get_dmg(void)			const;
+
+	protected:
+		std::string _name;
+		std::string _class_name;
+		int	_hp;
+		int _ep;
+		int _dmg;
+};
+
+#endif
