@@ -1,25 +1,18 @@
 # TODO
 
-- ex00: 100/100
-- ex01: _waiting evaluation_
-- ex02: _not finished_
-- ex03: _not finished_
-- ex04: _not finished_
+- cpp00: 100/100
+- cpp01: 100/100
+- cpp02: _waiting evaluation_
+- cpp03: _not finished_
+- cpp04: _not finished_
+- cpp05: _next circle_
+- cpp06: _next circle_
+- cpp07: _next circle_
+- cpp08: _next circle_
+- cpp09: _next circle_
 
-## cpp-02
+# cpp03
 
-### ex00
+## ex03
 
-- [x] Skim the articles in subject pdf
-- [x] Write copy assignment operator
-
-### ex01
-
-- [x] Write `toFloat` and `toInt`
-- [x] Write float and int constructors
-- [x] Copy new main
-- [ ] Write operators +, -, *, /
-
-### ex02
-
-- [ ] 
+- [ ] make tests for virtual (separate)
