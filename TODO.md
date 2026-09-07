@@ -22,10 +22,12 @@
 
 ## ex02
 
-- [ ] check ClapTrap copy constructor
-- [ ] check ClapTrap copy operator
-- [ ] check ScavTrap copy constructor
-- [ ] check ScavTrap copy operator
+- [x] check ClapTrap copy constructor
+- [x] check ClapTrap copy operator
+- [x] check ScavTrap copy constructor
+- [x] check ScavTrap copy operator
+- [x] check FragTrap copy constructor
+- [x] check FragTrap copy operator
 
 ## ex03
 
@@ -33,5 +35,7 @@
 - [ ] check ClapTrap copy operator
 - [ ] check ScavTrap copy constructor
 - [ ] check ScavTrap copy operator
+- [ ] check FragTrap copy constructor
+- [ ] check FragTrap copy operator
 - [ ] check DiamondTrap copy constructor
 - [ ] check DiamondTrap copy operator

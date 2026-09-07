@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 16:06:56 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 17:35:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap&);
 		~ScavTrap();
-		
+		ScavTrap&	operator=(const ScavTrap&);
+
 		void guardGate();
 };
 

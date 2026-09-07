@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:08:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 15:05:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 23:26:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ ClapTrap::ClapTrap(std::string name, int hp, int ep, int dmg)
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src) 
-	: _name(src.get_name()), _class_name("ClapTrap")
-	, _hp(src.get_hp()), _ep(src.get_ep()), _dmg(src.get_dmg()) {
+	: _name(src._name), _class_name("ClapTrap")
+	, _hp(src._hp), _ep(src._ep), _dmg(src._dmg) {
 	std::cout << BLU << "ClapTrap | Copy constructor\n" << RST;
 }
 
@@ -41,10 +41,10 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
-	this->_name = src.get_name();
-	this->_dmg = src.get_dmg();
-	this->_hp = src.get_hp();
-	this->_ep = src.get_ep();
+	this->_name = src._name;
+	this->_dmg = src._dmg;
+	this->_hp = src._hp;
+	this->_ep = src._ep;
 	return *this;
 }
 
