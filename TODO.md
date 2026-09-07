@@ -15,10 +15,10 @@
 
 ## ex01
 
-- [ ] check ClapTrap copy constructor
-- [ ] check ClapTrap copy operator
-- [ ] check ScavTrap copy constructor
-- [ ] check ScavTrap copy operator
+- [x] check ClapTrap copy constructor
+- [x] check ClapTrap copy operator
+- [x] check ScavTrap copy constructor
+- [x] check ScavTrap copy operator
 
 ## ex02
 

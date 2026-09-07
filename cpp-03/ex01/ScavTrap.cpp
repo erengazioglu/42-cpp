@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 17:50:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 21:34:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
 	std::cout << BLU << "ScavTrap | Copy constructor\n" << RST;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap&) {
+ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 	std::cout << MAG << "ScavTrap | Copy assignment operator\n" << RST;
+	if (this != &src)
+		ClapTrap::operator=(src);
+	return *this;
 }
 
 
