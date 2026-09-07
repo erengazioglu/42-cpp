@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 15:27:00 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/04 10:15:38 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);

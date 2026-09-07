@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 16:00:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 16:04:35 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/04 11:15:37 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DIAMONDTRAP_H
 
 # include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
 class DiamondTrap: public FragTrap, public ScavTrap {
 	public:
@@ -21,9 +22,10 @@ class DiamondTrap: public FragTrap, public ScavTrap {
 		DiamondTrap(std::string name);
 		~DiamondTrap();
 
+		void attack();
 		void whoAmI();
 	private:
 		std::string _name;
-}
+};
 
 #endif

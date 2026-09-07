@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:20:45 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 16:06:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/04 10:16:28 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ FragTrap::FragTrap() : ClapTrap() {
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
-	std::cout << BLU << "FragTrap | Default constructor\n" << RST;
+	std::cout << BLU << "FragTrap | Custom constructor\n" << RST;
 	_class_name = "FragTrap";
 }
 
