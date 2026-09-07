@@ -6,7 +6,21 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:22 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 23:47:22 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 23:56:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Dog.hpp"
+
+Dog::Dog() {
+	
+}
+Dog::~Dog() {
+
+}
+Dog::Dog(const Dog& src) {
+
+}
+Dog& Dog::operator=(const Dog& src) {
+
+}

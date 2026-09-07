@@ -6,7 +6,21 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:16 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 23:47:17 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 23:56:39 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
+
+Cat::Cat() {
+	
+}
+Cat::~Cat() {
+
+}
+Cat::Cat(const Cat& src) {
+
+}
+Cat& Cat::operator=(const Cat& src) {
+
+}
