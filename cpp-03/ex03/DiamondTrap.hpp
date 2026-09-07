@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 16:00:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/04 11:15:37 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 16:20:54 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ class DiamondTrap: public FragTrap, public ScavTrap {
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap&);
 		~DiamondTrap();
 
-		void attack();
-		void whoAmI();
+		DiamondTrap& operator=(const DiamondTrap&);
+		void attack(const std::string &target);
+		void whoAmI(void);
 	private:
 		std::string _name;
 };

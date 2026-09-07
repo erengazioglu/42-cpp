@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 16:00:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/04 11:16:26 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 16:21:11 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void DiamondTrap::whoAmI() {
 	<< ", also known as ClapTrap " << ClapTrap::_name << ".\n";
 }
 
-void DiamondTrap::attack(std::string &target) {
+void DiamondTrap::attack(const std::string &target) {
 	FragTrap::attack(target);
 }
