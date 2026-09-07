@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:08:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 16:37:14 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 17:37:34 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
+	std::cout << MAG << "ClapTrap | Copy assignment operator\n" << RST;
 	this->_name = src._name;
 	this->_dmg = src._dmg;
 	this->_hp = src._hp;
 	this->_ep = src._ep;
-	std::cout << MAG << "ClapTrap | Copy operator\n" << RST;
 	return *this;
 }
 
