@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:20:47 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/04 10:15:32 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 23:36:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap();
 		FragTrap(std::string name);
 		~FragTrap();
+		FragTrap(const FragTrap&);
+		FragTrap& operator=(const FragTrap&);
 
 		void highFivesGuys();
 };

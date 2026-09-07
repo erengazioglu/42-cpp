@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 15:53:34 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 21:34:13 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,23 @@ ScavTrap::ScavTrap(std::string name)
 	_class_name = "ScavTrap";
 }
 
-ScavTrap::ScavTrap(std::string name, int hp, int ep, int dmg) 
-	: ClapTrap(name, hp, ep, dmg) {
-	std::cout << BLU << "ScavTrap | Custom constructor\n" << RST;
+ScavTrap::~ScavTrap() {
+	std::cout << RED << "ScavTrap | Destructor\n" << RST;
 	_class_name = "ScavTrap";
 }
 
-ScavTrap::~ScavTrap() {
-	std::cout << RED << "ScavTrap | Destructor\n" << RST;
+ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src) {
+	_class_name = "ScavTrap";
+	std::cout << BLU << "ScavTrap | Copy constructor\n" << RST;
 }
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
+	std::cout << MAG << "ScavTrap | Copy assignment operator\n" << RST;
+	if (this != &src)
+		ClapTrap::operator=(src);
+	return *this;
+}
+
 
 void ScavTrap::guardGate() {
 	std::cout \

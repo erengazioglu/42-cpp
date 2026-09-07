@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 15:20:45 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/04 10:16:28 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/07 23:30:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
 
 FragTrap::~FragTrap() {
 	std::cout << RED << "FragTrap | Destructor\n" << RST;
+}
+
+FragTrap::FragTrap(const FragTrap& src) : ClapTrap(src) {
+	std::cout << MAG << "ScavTrap | Copy constructor\n" << RST;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& src) {
+	std::cout << MAG << "ScavTrap | Copy assignment operator\n" << RST;
+	if (this != &src)
+		ClapTrap::operator=(src);
+	return *this;
 }
 
 void FragTrap::highFivesGuys() {
