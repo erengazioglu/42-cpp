@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 10:01:02 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/08 10:18:25 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src) {
 
 std::string	WrongAnimal::getType(void) {
 	return _type;
+}
+
+void 	WrongAnimal::announceType(void) {
+	std::ostringstream oss;
+	oss << RED << "[" << _type << "]" << RST;
+	std::cout << std::left << std::setw(20) << oss.str();
 }
 
 void	WrongAnimal::makeSound(void) {

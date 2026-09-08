@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:24 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 10:01:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/08 10:18:00 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,22 @@ int main(void) {
 		Cat		cat;
 		Dog		dog;
 
-		std::cout << "[" << animal.getType() << "] ";
+		// you could use Animal* animals[] = {&animal, &cat, &dog}
+		// but the functions would have to be virtual
+		animal.announceType();
 		animal.makeSound();
-		std::cout << "[" << cat.getType() << "] ";
+		cat.announceType();
 		cat.makeSound();
-		std::cout << "[" << dog.getType() << "] ";
+		dog.announceType();
 		dog.makeSound();
 	}
 	{
 		WrongAnimal	animal;
 		WrongCat	cat;
 
-		std::cout << "[" << animal.getType() << "] ";
+		animal.announceType();
 		animal.makeSound();
-		std::cout << "[" << cat.getType() << "] ";
+		cat.announceType();
 		cat.makeSound();
 	}
 	return 0;
