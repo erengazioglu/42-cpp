@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 09:52:42 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/08 10:01:02 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() : _type("animal") {}
-Animal::~Animal() {}
+WrongAnimal::WrongAnimal() : _type("animal") {}
+WrongAnimal::~WrongAnimal() {}
 
-Animal::Animal(std::string type) : _type(type) {}
+WrongAnimal::WrongAnimal(std::string type) : _type(type) {}
 
-Animal::Animal(const Animal& src) : _type(src._type) {}
+WrongAnimal::WrongAnimal(const WrongAnimal& src) : _type(src._type) {}
 
-Animal& Animal::operator=(const Animal& src) {
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src) {
 	if (this != &src)
 		this->_type = src._type;
 	return *this;
 }
 
-std::string	Animal::getType(void) {
+std::string	WrongAnimal::getType(void) {
 	return _type;
 }
 
-void	Animal::makeSound(void) {
-	std::cout << "** generic musings of a generic " << _type << " **\n";
+void	WrongAnimal::makeSound(void) {
+	std::cout << "** this " << _type << " sounds... wrong **\n";
 }

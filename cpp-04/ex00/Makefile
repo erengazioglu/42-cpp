@@ -6,14 +6,25 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/30 23:18:52 by egaziogl          #+#    #+#              #
-#    Updated: 2026/09/07 23:46:45 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/09/08 09:46:56 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
 NAME 	= animal
-SRC		= Animal.cpp Dog.cpp Cat.cpp main.cpp
-DEP		= Animal.hpp Dog.hpp Cat.hpp
+SRC		= \
+	Animal.cpp \
+	Dog.cpp \
+	Cat.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp \
+	main.cpp
+DEP		= \
+	Animal.hpp \
+	Dog.hpp \
+	Cat.hpp \
+	WrongAnimal.hpp \
+	WrongCat.hpp
 
 all: $(NAME)
 

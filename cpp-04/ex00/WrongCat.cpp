@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/07 23:47:06 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 09:52:42 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/09/07 23:47:16 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/09/08 09:45:57 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-Animal::Animal() : _type("animal") {}
-Animal::~Animal() {}
+WrongCat::WrongCat() : WrongAnimal("cat") {}
 
-Animal::Animal(std::string type) : _type(type) {}
+WrongCat::~WrongCat() {}
 
-Animal::Animal(const Animal& src) : _type(src._type) {}
+WrongCat::WrongCat(const WrongCat& src) : WrongAnimal(src) {}
 
-Animal& Animal::operator=(const Animal& src) {
+WrongCat& WrongCat::operator=(const WrongCat& src) {
 	if (this != &src)
-		this->_type = src._type;
+		WrongAnimal::operator=(src);
 	return *this;
-}
-
-std::string	Animal::getType(void) {
-	return _type;
-}
-
-void	Animal::makeSound(void) {
-	std::cout << "** generic musings of a generic " << _type << " **\n";
 }
