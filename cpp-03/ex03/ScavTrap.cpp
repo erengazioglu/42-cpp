@@ -6,11 +6,15 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 21:34:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 13:25:53 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+int ScavTrap::default_hp = 100;
+int ScavTrap::default_ep = 50;
+int ScavTrap::default_dmg = 20;
 
 ScavTrap::ScavTrap() 
 	: ClapTrap("", 100, 50, 20) {
@@ -41,8 +45,34 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 	return *this;
 }
 
+void ScavTrap::attack(const std::string& target) {
+	if (_hp <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is ded!\n" << RST;
+		return ;
+	}
+	if (_ep <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is out of energy!\n" << RST;
+		return ;
+	}
+	_ep--;
+	std::cout \
+		<< _class_name << " " << _name \
+		<< " attacks " << target \
+		<< " " << GRN << "with a different message ;)" << RST << " causing " << _dmg \
+		<< " points of damage." << std::endl; 
+}
 
 void ScavTrap::guardGate() {
+	if (_hp <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is ded!\n" << RST;
+		return ;
+	}
 	std::cout \
 	<< _class_name << " " << _name \
 	<< " is in gate keeper mode.\n";

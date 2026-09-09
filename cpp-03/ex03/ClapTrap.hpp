@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:09:08 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 15:01:30 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 13:23:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ class ClapTrap {
 		int get_hp(void)			const;
 		int get_ep(void)			const;
 		int get_dmg(void)			const;
+
+		static int default_hp;
+		static int default_ep;
+		static int default_dmg;
 
 	protected:
 		std::string _name;

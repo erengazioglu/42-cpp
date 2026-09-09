@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 23:37:00 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 13:22:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ class ScavTrap : virtual public ClapTrap {
 		ScavTrap&	operator=(const ScavTrap&);
 
 		void guardGate();
+		void attack(const std::string& target);
+		static int default_hp;
+		static int default_ep;
+		static int default_dmg;
 };
 
 #endif

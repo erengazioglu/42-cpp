@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/03 16:00:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 16:20:54 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 12:34:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap {
+class DiamondTrap: public ScavTrap, public FragTrap {
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
