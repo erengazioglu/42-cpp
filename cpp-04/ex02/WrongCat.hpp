@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:20 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 09:43:43 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 17:21:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat(const WrongCat&);
 		~WrongCat();
 		WrongCat& operator=(const WrongCat&);
-
+		void makeSound(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:16 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 15:41:58 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 17:31:11 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ Cat& Cat::operator=(const Cat& src) {
 	return *this;
 }
 
-void	Cat::makeSound(void) {
+void	Cat::makeSound(void) const {
 	std::cout << "Meowwwwww~\n";
 }

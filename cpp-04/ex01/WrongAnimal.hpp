@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 10:18:56 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 17:20:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class WrongAnimal {
 		WrongAnimal(const WrongAnimal&);
 		WrongAnimal(std::string type);
 		WrongAnimal& operator=(const WrongAnimal&);
-		std::string getType(void);
-		void announceType(void);
-		void makeSound(void);
+		std::string getType(void)	const;
+		void announceType(void)		const;
+		void makeSound(void)		const;
 
 	protected:
 		std::string _type;

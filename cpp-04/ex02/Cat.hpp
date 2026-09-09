@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:20 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 15:35:18 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 17:27:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cat : public Animal {
 		Cat(const Cat&);
 		~Cat();
 		Cat& operator=(const Cat&);
-		void makeSound(void);
+		void makeSound(void) const;
 	private:
 		Brain* _brain;
 };

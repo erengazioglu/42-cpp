@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:24 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 16:35:44 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 17:28:01 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,5 @@ int main(void) {
 		delete a;
 		b.readThoughts();
 	}
-
 	return 0;
 }
