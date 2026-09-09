@@ -23,7 +23,9 @@
 - [x] add `self != &src` check for copies, to not leak extra brains
 - [x] make main tests with array of 10? 
 - ~~make tests parametric (`count = 10, while for i < count / 2`)~~
-- ~~add thoughts into one dog brain in the array, use copy assignment on the next dog, see if it worked~~
+- [x] add thoughts into one dog brain in the array, use copy assignment on the next dog, see if it worked
 - [x] check leaks with `valgrind`
 
 ## ex02
+
+- [ ]
