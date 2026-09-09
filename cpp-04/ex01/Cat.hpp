@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:20 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 09:30:56 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 13:44:03 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_H
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal {
 	public:
@@ -22,7 +23,8 @@ class Cat : public Animal {
 		~Cat();
 		Cat& operator=(const Cat&);
 		void makeSound(void);
-
+	private:
+		Brain* _brain;
 };
 
 #endif

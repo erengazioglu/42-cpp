@@ -15,9 +15,9 @@
 
 ## ex01
 
-- [ ] finish writing `Brain.cpp`
-- [ ] write constructor announcements for testing
-- [ ] add private `_brain` member to `Cat` and `Dog`
+- [x] finish writing `Brain.cpp`
+- [x] write constructor announcements for testing
+- [x] add private `_brain` member to `Cat` and `Dog`
 - [ ] update constructor and destructor to create and delete `_brain`
 - [ ] update copy constructor and assignment to deep copy the `_brain`
 - [ ] add `self != &src` check for copies, to not leak extra brains

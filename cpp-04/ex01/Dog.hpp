@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:26 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 09:31:05 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 13:43:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DOG_H
 
 # include "Animal.hpp"
-
+# include "Brain.hpp"
 class Dog : public Animal {
 	public:
 		Dog();
@@ -22,6 +22,8 @@ class Dog : public Animal {
 		~Dog();
 		Dog& operator=(const Dog&);
 		void makeSound(void);
+	private:
+		Brain* _brain;
 };
 
 #endif
