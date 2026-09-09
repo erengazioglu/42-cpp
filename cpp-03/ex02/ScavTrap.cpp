@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 11:58:46 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 12:23:05 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,26 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 	return *this;
 }
 
+void ScavTrap::attack(const std::string& target) {
+	if (_hp <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is ded!\n" << RST;
+		return ;
+	}
+	if (_ep <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is out of energy!\n" << RST;
+		return ;
+	}
+	_ep--;
+	std::cout \
+		<< _class_name << " " << _name \
+		<< " attacks " << target \
+		<< " " << GRN << "with a different message ;)" << RST << " causing " << _dmg \
+		<< " points of damage." << std::endl; 
+}
 
 void ScavTrap::guardGate() {
 	if (_hp <= 0) {
