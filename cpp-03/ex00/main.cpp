@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:18:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 16:38:12 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 11:53:30 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ int main(void) {
 	clap_a.attack("Ugali");
 	clap_a.takeDamage(5);
 	clap_a.beRepaired(10);
+	
 	clap_b = clap_a;
 	std::cout << "clap_b._ep = " << clap_b.get_ep() << std::endl;
 	for (int i = 0; i < 9; i++) {
 		clap_b.attack("Ugali");
 	}
-	std::cout << "clap_a._ep = " << clap_a.get_ep() << std::endl;
+	clap_b.beRepaired(10);
+	clap_b.takeDamage(100);
+	clap_b.takeDamage(100);
+	clap_b.attack("Ugali");
+	clap_b.beRepaired(10);
+
 }
