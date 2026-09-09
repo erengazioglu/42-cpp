@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:24 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 15:45:10 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 16:35:44 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,23 @@ int main(void) {
 		}
 	}
 	{
-		Dog a;
-		Dog b(a);
-		Dog c = a;
-		Dog d;
+		Cat a;
+		Cat b(a);
+		Cat c = a;
+		Cat d;
 		d = a;
+	}
+	{
+		Dog* a = new Dog;
+		Dog b;
+		a->setIdea(0, "Chew on the guest's shoes.");
+		a->setIdea(1, "Pee on the carpet.");
+		b = *a;
+		a->setIdea(1, "");
+		b.setIdea(2, "Bark!");
+		a->readThoughts();
+		delete a;
+		b.readThoughts();
 	}
 
 	return 0;

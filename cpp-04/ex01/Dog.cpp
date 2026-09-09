@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:22 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 15:45:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 16:31:59 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,18 @@ Dog& Dog::operator=(const Dog& src) {
 
 void	Dog::makeSound(void) {
 	std::cout << "WOOF!\n";
+}
+
+void	Dog::readThoughts(void) {
+	for (int i = 0; i < 100; i++) {
+		if (_brain->ideas[i].size())
+			std::cout << "Idea " 
+			<< i << ": \""
+			<< _brain->ideas[i] << "\"\n";
+	}
+}
+
+void	Dog::setIdea(int i, std::string idea) {
+	if (i < 0 || i >= 100) return ;
+	_brain->ideas[i] = idea;
 }
