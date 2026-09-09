@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:08:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 11:54:47 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 11:57:14 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		<< " takes " << amount \
 		<< " points of damage." << std::endl; 
 }
+
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (_hp <= 0) {
 		std::cout << YEL \

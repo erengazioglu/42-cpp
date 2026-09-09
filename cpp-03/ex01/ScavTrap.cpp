@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/31 00:45:28 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 21:34:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 11:58:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 
 
 void ScavTrap::guardGate() {
+	if (_hp <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is ded!\n" << RST;
+		return ;
+	}
 	std::cout \
 	<< _class_name << " " << _name \
 	<< " is in gate keeper mode.\n";

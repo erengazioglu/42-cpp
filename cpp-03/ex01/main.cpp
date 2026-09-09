@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:18:38 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/03 16:13:13 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 11:59:43 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int main(void) {
 		for (int i = 0; i < 9; i++) {
 			scav.attack("Ugali");
 		}
+		scav.guardGate();
+		scav.takeDamage(105);
 		scav.guardGate();
 	}
 }

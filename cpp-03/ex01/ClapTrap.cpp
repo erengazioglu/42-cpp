@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 23:08:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/07 17:37:15 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 11:58:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,16 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
 }
 
 void	ClapTrap::attack(const std::string& target) {
-	if (_ep <= 0) {
-		std::cout \
+	if (_hp <= 0) {
+		std::cout << YEL \
 			<< _class_name << " " << _name \
-			<< " is out of energy!" << std::endl;
+			<< " is ded!\n" << RST;
+		return ;
+	}
+	if (_ep <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is out of energy!\n" << RST;
 		return ;
 	}
 	_ep--;
@@ -65,17 +71,30 @@ void	ClapTrap::attack(const std::string& target) {
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
+	if (_hp <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is already ded!" << std::endl;
+		return ;
+	}
 	_hp -= amount;
 	std::cout \
 		<< _class_name << " " << _name \
 		<< " takes " << amount \
 		<< " points of damage." << std::endl; 
 }
+
 void	ClapTrap::beRepaired(unsigned int amount) {
-	if (_ep <= 0) {
-		std::cout \
+	if (_hp <= 0) {
+		std::cout << YEL \
 			<< _class_name << " " << _name \
-			<< " is out of energy!" << std::endl;
+			<< " is ded!\n" << RST;
+		return ;
+	}
+	if (_ep <= 0) {
+		std::cout << YEL \
+			<< _class_name << " " << _name \
+			<< " is out of energy!\n" << RST;
 		return ;
 	}
 	_ep--;
