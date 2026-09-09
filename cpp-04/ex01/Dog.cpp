@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:22 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 14:05:33 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 15:45:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,20 @@ Dog::~Dog() {
 	delete _brain;
 }
 
-Dog::Dog(const Dog& src) : Animal(src) {
+Dog::Dog(const Dog& src) : Animal(src), _brain(new Brain) {
+	for (int i = 0; i < 100; i++) {
+		_brain->ideas[i] = src._brain->ideas[i];
+	}
 	std::cout << BLU << "Dog | Copy constructor\n" << RST;
 }
 
 Dog& Dog::operator=(const Dog& src) {
-	if (this != &src)
+	if (this != &src) {
 		Animal::operator=(src);
+		for (int i = 0; i < 100; i++) {
+			_brain->ideas[i] = src._brain->ideas[i];
+		}
+	}
 	std::cout << BLU << "Dog | Copy assignment\n" << RST;
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/08 10:12:54 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/09 15:35:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iostream>
 # include <iomanip>
 # include <sstream>
+
+# include "Brain.hpp"
 
 # define RED "\033[31m"
 # define GRN "\033[32m"
@@ -29,13 +31,14 @@
 class Animal {
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(const Animal&);
 		Animal(std::string type);
 		Animal& operator=(const Animal&);
 		std::string	getType(void);
+		
 		void announceType(void);
-		void makeSound(void);
+		virtual void makeSound(void);
 
 	protected:
 		std::string _type;

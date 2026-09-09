@@ -18,8 +18,12 @@
 - [x] finish writing `Brain.cpp`
 - [x] write constructor announcements for testing
 - [x] add private `_brain` member to `Cat` and `Dog`
-- [ ] update constructor and destructor to create and delete `_brain`
-- [ ] update copy constructor and assignment to deep copy the `_brain`
-- [ ] add `self != &src` check for copies, to not leak extra brains
-- [ ] make main tests with array of 10? but make it parametric (`count = 10, while for i < count / 2`)
-- [ ] check leaks with `valgrind`
+- [x] update constructor and destructor to create and delete `_brain`
+- [x] update copy constructor and assignment to deep copy the `_brain`
+- [x] add `self != &src` check for copies, to not leak extra brains
+- [x] make main tests with array of 10? 
+- ~~make tests parametric (`count = 10, while for i < count / 2`)~~
+- ~~add thoughts into one dog brain in the array, use copy assignment on the next dog, see if it worked~~
+- [x] check leaks with `valgrind`
+
+## ex02
