@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 18:11:13 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 18:48:55 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/09/16 18:08:44 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/09/16 18:53:25 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "Cure.hpp"
 
-Character::Character() {
-	std::cout << BLU << "Character | Default constructor\n" << RST;
+Cure::Cure() {
+	std::cout << BLU << "Cure | Default constructor\n" << RST;
 }
 
-Character::Character(const Character& src) {
-	std::cout << BLU << "Character | Copy constructor\n" << RST;
+Cure::Cure(const Cure& src) {
+	std::cout << BLU << "Cure | Copy constructor\n" << RST;
 }
 
-Character::~Character() {
-	std::cout << RED << "Character | Destructor\n" << RST;
+Cure::~Cure() {
+	std::cout << RED << "Cure | Destructor\n" << RST;
 }
 
-Character& Character::operator=(const Character& src) {
-	std::cout << BLU << "Character | Copy assignment\n" << RST;
+Cure& Cure::operator=(const Cure& src) {
+	std::cout << BLU << "Cure | Copy assignment\n" << RST;
 	return *this;
 }

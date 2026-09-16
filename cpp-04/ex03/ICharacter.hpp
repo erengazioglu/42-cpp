@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:51:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 18:15:14 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/16 18:48:16 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ICHARACTER_HPP
 # include <string>
 # include "AMateria.hpp"
+# include "Common.hpp"
 
 class ICharacter {
 	public:
