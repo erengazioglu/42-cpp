@@ -1,13 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 14:58:14 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 15:00:32 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/09/16 18:11:23 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/09/16 18:16:23 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+# include "ICharacter.hpp"
+
+class Character : public ICharacter {
+	
+};
+
+#endif

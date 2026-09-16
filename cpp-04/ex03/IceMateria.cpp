@@ -1,20 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IceMateria.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/16 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 18:17:03 by egaziogl         ###   ########.fr       */
+/*   Created: 2026/09/16 18:08:46 by egaziogl          #+#    #+#             */
+/*   Updated: 2026/09/16 18:10:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "CureMateria.hpp"
 #include "IceMateria.hpp"
-#include "Character.hpp"
-
-
-int main(void) {
-	
-}
