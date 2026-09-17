@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:49:12 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 18:16:17 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/17 22:54:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 # include <string>
 # include "ICharacter.hpp"
 
-class AMateria
-{
-	protected:
-
+class AMateria {
 	public:
+		AMateria();
+		~AMateria();
+		AMateria(const AMateria&);
+		AMateria& operator=(const AMateria&);
+		
 		AMateria(std::string const & type);
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;

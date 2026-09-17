@@ -6,13 +6,13 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:08:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/16 18:53:25 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/17 22:54:22 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() {
+Cure::Cure() : AMateria(){
 	std::cout << BLU << "Cure | Default constructor\n" << RST;
 }
 
