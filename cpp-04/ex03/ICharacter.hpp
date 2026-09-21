@@ -6,15 +6,16 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 14:51:07 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/21 10:10:22 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/21 10:50:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 # include <string>
-# include "AMateria.hpp"
 # include "Common.hpp"
+
+class AMateria;
 
 class ICharacter {
 	public:

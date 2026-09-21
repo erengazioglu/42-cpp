@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:11:13 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/21 09:57:43 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/21 10:54:28 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Character::Character() : _name("") {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
-	std::cout << BLU << "Character | Default constructor\n" << RST;
 }
 
 Character::Character(std::string const & name) : _name(name) {
@@ -24,19 +23,27 @@ Character::Character(std::string const & name) : _name(name) {
 }
 
 Character::Character(const Character& src) {
-	std::cout << BLU << "Character | Copy constructor\n" << RST;
+	for (int i = 0; i < 4; i++) {
+		_inventory[i] = src._inventory[i]->clone();
+	}
 }
 
 Character::~Character() {
-	std::cout << RED << "Character | Destructor\n" << RST;
+	for (int i = 0; i < 4; i++) {
+		delete _inventory[i];
+	}
 }
 
 Character& Character::operator=(const Character& src) {
 	std::cout << BLU << "Character | Copy assignment\n" << RST;
 	for (int i = 0; i < 4; i++) {
-		_inventory[i] = src._inventory[i];
+		_inventory[i] = src._inventory[i]->clone();
 	}
 	return *this;
+}
+
+const std::string& Character::getName() const {
+	return _name;
 }
 
 void Character::equip(AMateria* m) {
