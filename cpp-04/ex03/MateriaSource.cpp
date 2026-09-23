@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:21:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/21 10:18:28 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 01:47:30 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,41 @@ MateriaSource::MateriaSource() {
 	}
 }
 
+MateriaSource::~MateriaSource() {
+	for (int i = 0; i < 4; i++) {
+		if (_learned[i] == NULL)
+			return;
+		delete _learned[i];
+	}
+}
+
+MateriaSource& MateriaSource::operator=(const MateriaSource& src) {
+	if (this != &src) {
+		for (int i = 0; i < 4; i++) {
+			if (src._learned[i] == NULL)
+				return *this;
+			_learned[i] = src._learned[i]->clone();
+		}
+	}
+	return *this;
+}
+
 void MateriaSource::learnMateria(AMateria* src) {
-	
+	if (!src) return;
+	for (int i = 0; i < 4; i++) {
+		if (_learned[i] == NULL) {
+			_learned[i] = src;
+			return;
+		}
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
-
+	for (int i = 0; i < 4; i++) {
+		if (_learned[i] == NULL)
+			return NULL;
+		if (type == _learned[i]->getType())
+			return _learned[i]->clone();
+	}
+	return NULL;
 }

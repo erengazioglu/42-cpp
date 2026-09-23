@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:08:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/21 10:55:45 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 01:15:39 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(const Cure& src) : AMateria("cure") {}
+Cure::Cure(const Cure& src) : AMateria("cure") {
+	(void) src;
+}
 
 Cure::~Cure() {}
 
 Cure& Cure::operator=(const Cure& src) {
+	(void) src;
 	return *this;
 }
 
