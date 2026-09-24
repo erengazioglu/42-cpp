@@ -4,7 +4,7 @@
 - cpp01: 100/100
 - cpp02: 95/100
 - cpp03: 100/100
-- cpp04: _not finished_
+- cpp04: _waiting eval_
 - cpp05: _next circle_
 - cpp06: _next circle_
 - cpp07: _next circle_
