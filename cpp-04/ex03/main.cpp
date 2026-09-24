@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/24 12:42:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 12:53:07 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,20 @@ void test2() {
 	for (int i = 0; i < 4; i++) {
 		src->learnMateria(new Cure());
 	}
+	
+	ICharacter* me = new Character("me");
 	materia = src->createMateria("cure");
+	me->unequip(0);
+	me->equip(materia);
+	for (int i = 0; i < 4; i++) {
+		materia = src->createMateria("ice");
+		me->equip(materia);
+	}
+	me->unequip(4);
 
 	delete src;
 	delete materia;
+	delete me;
 }
 
 
