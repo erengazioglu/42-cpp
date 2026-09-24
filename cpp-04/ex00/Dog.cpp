@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/07 23:47:22 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/09 16:54:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 13:26:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ Dog& Dog::operator=(const Dog& src) {
 	return *this;
 }
 
-void	Dog::makeSound(void) {
+void	Dog::makeSound(void) const {
 	std::cout << "WOOF!\n";
 }
