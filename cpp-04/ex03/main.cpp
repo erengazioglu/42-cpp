@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/21 10:15:30 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 12:42:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include "MateriaSource.hpp"
 #include "IMateriaSource.hpp"
 
-
-int main(void) {
+void test1() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
 
 	ICharacter* me = new Character("me");
 	
@@ -37,6 +37,26 @@ int main(void) {
 	delete bob;
 	delete me;
 	delete src;
-	
+}
+
+void test2() {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	AMateria* materia = src->createMateria("cure");
+
+	for (int i = 0; i < 4; i++) {
+		src->learnMateria(new Cure());
+	}
+	materia = src->createMateria("cure");
+
+	delete src;
+	delete materia;
+}
+
+
+int main(void) {
+	// test1();
+	test2();
+
 	return 0;
 }
