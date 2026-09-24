@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/24 12:53:07 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 13:16:11 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,15 @@ void test2() {
 	}
 	me->unequip(4);
 
+	ICharacter* bob = new Character("bob");
+	for (int i = 0; i < 5; i++) {
+		me->use(i, *bob);
+	}
+
 	delete src;
 	delete materia;
 	delete me;
+	delete bob;
 }
 
 
