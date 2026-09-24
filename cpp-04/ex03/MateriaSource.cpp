@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/16 18:21:27 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/24 12:45:09 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/24 12:48:19 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ void MateriaSource::learnMateria(AMateria* src) {
 			return;
 		}
 	}
-	std::cout << "No more space for materia.\n";
+	std::cout << RED << "No more space for materia.\n" << RST;
 	delete src;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < 4; i++) {
 		if (_learned[i] == NULL) {
-			std::cout << "No materia created.\n";
+			std::cout << RED << "No materia created.\n" << RST;
 			return NULL;
 		}
 		if (type == _learned[i]->getType())
 			return _learned[i]->clone();
 	}
-	std::cout << "No materia created.\n";
+	std::cout << RED << "No materia created.\n" << RST;
 	return NULL;
 }
