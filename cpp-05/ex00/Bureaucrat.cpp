@@ -6,15 +6,19 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:11:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 14:31:43 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 18:56:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : 
-	_name(""),
-	_grade(150) {}
+Bureaucrat::Bureaucrat()
+	: _name("")
+	, _grade(150) {}
+
+Bureaucrat::Bureaucrat(const std::string& name)
+	: _name(name)
+	, _grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name)
 {

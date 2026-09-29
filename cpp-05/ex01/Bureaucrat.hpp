@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:12:13 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 18:03:43 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 18:56:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Form;
 class Bureaucrat {
 	public:
 		Bureaucrat();
+		Bureaucrat(const std::string& name);
 		Bureaucrat(const std::string& name, int grade);
 		Bureaucrat(const Bureaucrat&);
 		~Bureaucrat();
