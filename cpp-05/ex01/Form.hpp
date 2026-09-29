@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:39:49 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 18:55:24 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 23:02:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ class Form {
 			const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			const char* what() const throw();
+		};
+		class AlreadySignedException : public std::exception {
 			const char* what() const throw();
 		};
 		

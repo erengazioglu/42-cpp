@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:12:13 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 18:56:50 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 22:59:50 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@
 # include <iostream>
 # include <exception>
 # include <iostream>
-
-
 
 class Form;
 

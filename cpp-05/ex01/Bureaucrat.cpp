@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:11:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 18:56:38 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 23:28:55 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,31 @@ void Bureaucrat::grade_down() {
 	_grade += 1;
 }
 
+void Bureaucrat::signForm(Form& form) {
+	try {
+		form.beSigned(*this);
+		std::cout << _name 
+			<< " signed " << form.get_name() << ".\n";
+	} catch (const Form::GradeTooHighException&) {
+		std::cout << RED
+			<< _name << " couldn't sign "
+			<< form.get_name()
+			<< " because the form's grade is too high."
+			<< RST << "\n";
+	} catch (const Form::AlreadySignedException&) {
+		std::cout << RED
+			<< _name << " couldn't sign "
+			<< form.get_name()
+			<< " because it is already signed."
+			<< RST << "\n";
+	} catch (const std::exception& e) {
+		std::cout << RED 
+			<< _name << " couldn't sign "
+			<< form.get_name() << " because "
+			<< e.what() << RST << "\n";
+	}
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return "Grade too high (must be 1-150).";
 }
@@ -72,6 +97,6 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
 	os	<< obj.get_name() 
 		<< ", bureaucrat grade "
-		<< obj.get_grade() << ".\n";
+		<< obj.get_grade();
     return os;
 }

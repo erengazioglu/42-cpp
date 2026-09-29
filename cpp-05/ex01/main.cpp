@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:11:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 18:53:17 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 23:24:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void tests_ex00() {
 	}
 }
 
-void tests_ex01() {
+void tests_ex01_ctors() {
 	try {
 		std::cout << CYN << "\n--\nTrying to create Form(Arrest warrant, 50, 100)\n" << RST;
 		Form form("Arrest warrant", 50, 100);
@@ -91,9 +91,30 @@ void tests_ex01() {
 	}
 }
 
+void tests_ex01_signing() {
+	Bureaucrat high("Eraimon", 10);
+	Bureaucrat low("Tanaka", 120);
+	
+	Form classified("Nuclear program", 1, 1);
+	Form sensitive("Epstein files", 15, 5);
+	Form transparent("Tax form", 130, 100);
+
+	std::cout << YEL << "---\n" << low << ", signing forms:\n" << RST;
+	low.signForm(transparent);
+	low.signForm(sensitive);
+	low.signForm(classified);
+	std::cout << YEL << "---\n" << high << ", signing forms:\n" << RST;
+	high.signForm(transparent);
+	high.signForm(sensitive);
+	high.signForm(classified);
+
+}
+
+
 int main() {
 
-	tests_ex00();
-	tests_ex01();
+	// tests_ex00();
+	// tests_ex01_ctors();
+	tests_ex01_signing();
 	return 0;
 }
