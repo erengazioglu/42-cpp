@@ -6,11 +6,12 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:11:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 14:31:43 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/29 18:42:00 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : 
 	_name(""),

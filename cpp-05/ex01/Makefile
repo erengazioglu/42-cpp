@@ -6,17 +6,19 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/30 23:18:52 by egaziogl          #+#    #+#              #
-#    Updated: 2026/09/29 14:24:35 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/09/29 18:41:23 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
-NAME 	= bureaucrat
+NAME 	= form
 SRC		= \
 	main.cpp \
-	Bureaucrat.cpp
+	Bureaucrat.cpp \
+	Form.cpp
 DEP		= \
-	Bureaucrat.hpp
+	Bureaucrat.hpp \
+	Form.hpp
 	
 all: $(NAME)
 
