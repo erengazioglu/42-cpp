@@ -32,6 +32,7 @@ class AForm {
 		const std::string& get_name(void) const;
 		int get_sign_clearance(void) const;
 		int get_exec_clearance(void) const;
+		virtual void execute(const Bureaucrat& executor) = 0;
 		
 		class GradeTooHighException : public std::exception {
 			const char* what() const throw();
