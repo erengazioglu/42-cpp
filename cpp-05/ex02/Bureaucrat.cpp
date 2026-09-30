@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:11:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 16:01:38 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/30 16:13:14 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ void Bureaucrat::executeForm(const AForm& form) {
 	try {
 		form.execute(*this);
 	} catch (std::exception& e) {
-		std::cout << RED
-			<< "Cannot execute " << form.get_name() 
+		std::cout << RED << _name 
+			<< " cannot execute " << form.get_name() 
 			<< ": " << e.what()
 			<< "\n" << RST; 
 	}

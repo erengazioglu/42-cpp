@@ -82,15 +82,15 @@ void AForm::check_clearance(const Bureaucrat& executor) const {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return "AForm grade too high (must be 1-150)";
+	return "grade too high";
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return "AForm grade too low (must be 1-150)";
+	return "grade too low";
 }
 
 const char* AForm::AlreadySignedException::what() const throw() {
-	return "AForm is already signed";
+	return "form is already signed";
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
