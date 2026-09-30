@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 00:49:05 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 00:52:48 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/30 16:04:34 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm(const RobotomyRequestForm&);
 		~RobotomyRequestForm();
 		RobotomyRequestForm& operator=(const RobotomyRequestForm&);
+		void execute(const Bureaucrat& executor) const;
+	private:
+		std::string _target;
 };
 
 #endif

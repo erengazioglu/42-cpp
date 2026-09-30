@@ -76,6 +76,11 @@ int AForm::get_exec_clearance(void) const {
 	return _exec_clearance;
 }
 
+void AForm::check_clearance(const Bureaucrat& executor) const {
+	if (executor.get_grade() > _exec_clearance)
+		throw GradeTooLowException();
+}
+
 const char* AForm::GradeTooHighException::what() const throw() {
 	return "AForm grade too high (must be 1-150)";
 }

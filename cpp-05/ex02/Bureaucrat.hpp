@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:12:13 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 23:34:03 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:59:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ class Bureaucrat {
 		int get_grade() const;
 		void grade_up();
 		void grade_down();
-		void signAForm(AForm&);
+		void signForm(AForm&);
+		void executeForm(const AForm&);
 
 		class GradeTooHighException : public std::exception {
 			const char* what() const throw();

@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/30 23:18:52 by egaziogl          #+#    #+#              #
-#    Updated: 2026/09/29 23:34:32 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/09/30 16:05:48 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,16 @@ NAME 	= a_form
 SRC		= \
 	main.cpp \
 	Bureaucrat.cpp \
-	AForm.cpp
+	AForm.cpp \
+	PresidentialPardonForm.cpp \
+	RobotomyRequestForm.cpp \
+	ShrubberyCreationForm.cpp
 DEP		= \
 	Bureaucrat.hpp \
-	AForm.hpp
+	AForm.hpp \
+	PresidentialPardonForm.hpp \
+	RobotomyRequestForm.hpp \
+	ShrubberyCreationForm.hpp 
 	
 all: $(NAME)
 

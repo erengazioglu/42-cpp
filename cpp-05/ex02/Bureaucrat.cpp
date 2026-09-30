@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:11:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 23:34:03 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/30 16:01:38 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void Bureaucrat::grade_down() {
 	_grade += 1;
 }
 
-void Bureaucrat::signAForm(AForm& AForm) {
+void Bureaucrat::signForm(AForm& AForm) {
 	try {
 		AForm.beSigned(*this);
 		std::cout << _name 
@@ -82,6 +82,17 @@ void Bureaucrat::signAForm(AForm& AForm) {
 			<< _name << " couldn't sign "
 			<< AForm.get_name() << " because "
 			<< e.what() << RST << "\n";
+	}
+}
+
+void Bureaucrat::executeForm(const AForm& form) {
+	try {
+		form.execute(*this);
+	} catch (std::exception& e) {
+		std::cout << RED
+			<< "Cannot execute " << form.get_name() 
+			<< ": " << e.what()
+			<< "\n" << RST; 
 	}
 }
 

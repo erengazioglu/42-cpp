@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 00:47:48 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 00:53:01 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/09/30 16:04:36 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm(const PresidentialPardonForm&);
 		~PresidentialPardonForm();
 		PresidentialPardonForm& operator=(const PresidentialPardonForm&);
+		void execute(const Bureaucrat& executor) const;
+	private:
+		std::string _target;
 };
 
 #endif
