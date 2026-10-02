@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 16:08:18 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/02 16:01:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,10 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
-	// try {
-		AForm::check_clearance(executor);
-		std::cout << "* Drilling noises *\n";
-		if (std::rand() % 2 == 0)
-			std::cout << _target << " has been robotomized successfully.\n";
-		else
-			std::cout << "Robotomy of " << _target << " failed.\n";
-	// } catch (std::exception& e) {
-	// 	std::cout << RED
-	// 		<< "Cannot execute " << AForm::get_name() 
-	// 		<< ": " << e.what()
-	// 		<< "\n" << RST; 
-	// }
+	AForm::check_clearance(executor);
+	std::cout << "* Drilling noises *\n";
+	if (std::rand() % 2 == 0)
+		std::cout << _target << " has been robotomized successfully.\n";
+	else
+		std::cout << "Robotomy of " << _target << " failed.\n";
 }

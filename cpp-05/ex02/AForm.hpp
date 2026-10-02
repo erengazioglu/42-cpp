@@ -44,6 +44,9 @@ class AForm {
 		class AlreadySignedException : public std::exception {
 			const char* what() const throw();
 		};
+		class InvalidFileException : public std::exception {
+			const char* what() const throw();
+		};
 		
 	private:
 		const std::string _name;

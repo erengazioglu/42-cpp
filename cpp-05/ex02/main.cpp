@@ -6,13 +6,14 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:11:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 16:12:00 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/02 16:04:45 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <cstdlib>
 #include <ctime>
 
@@ -22,6 +23,7 @@ int main() {
 	Bureaucrat high("Pompy", 1);
 	RobotomyRequestForm robo("Mibombo");
 	PresidentialPardonForm pres("Mibombo");
+	ShrubberyCreationForm shrub("Mibombo");
 
 
 	for (int i = 0; i < 10; i++)
@@ -29,6 +31,9 @@ int main() {
 	low.executeForm(robo);
 	high.executeForm(pres);
 	low.executeForm(pres);
+	high.executeForm(shrub);
+	low.executeForm(shrub);
+
 
 	return 0;
 }

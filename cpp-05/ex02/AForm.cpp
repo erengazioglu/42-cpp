@@ -93,6 +93,10 @@ const char* AForm::AlreadySignedException::what() const throw() {
 	return "form is already signed";
 }
 
+const char* AForm::InvalidFileException::what() const throw() {
+	return "couldn't open file";
+}
+
 std::ostream& operator<<(std::ostream& os, const AForm& obj) {
 	return os << "AForm " 	<< obj.get_name() 
 		<< ", requires " 	<< obj.get_sign_clearance()
