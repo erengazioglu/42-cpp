@@ -27,12 +27,14 @@ class AForm {
 		AForm(const AForm&);
 		virtual ~AForm();
 		AForm& operator=(const AForm&);
+		virtual AForm* clone() const = 0;
 
 		void beSigned(const Bureaucrat&);
 		const std::string& get_name(void) const;
 		int get_sign_clearance(void) const;
 		int get_exec_clearance(void) const;
 		void check_clearance(const Bureaucrat& executor) const;
+		virtual void set_target(const std::string&) = 0;
 		virtual void execute(const Bureaucrat& executor) const = 0;
 		
 		class GradeTooHighException : public std::exception {
