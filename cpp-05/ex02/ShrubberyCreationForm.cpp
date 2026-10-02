@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 15:11:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 16:31:06 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/02 16:34:04 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
 	if (!f_out.is_open())
 		throw AForm::InvalidFileException();
 	draw_shrub(f_out);
+	f_out.close();
+	std::cout << executor.get_name()
+		<< " successfully generated " << fn << ".\n";
 }
