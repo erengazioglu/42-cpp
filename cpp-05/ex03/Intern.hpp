@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 18:02:05 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 18:48:30 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/02 19:15:43 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <map>
 # include "AForm.hpp"
 # include <iostream>
+# include <exception>
 
 # define RED "\033[31m"
 # define GRN "\033[32m"
@@ -36,6 +37,10 @@ class Intern {
 		~Intern();
 		Intern& operator=(const Intern&);
 		AForm* makeForm(const std::string& form, const std::string& target) const;
+
+		class InvalidFormException : public std::exception {
+			const char* what() const throw();
+		};
 	private:
 		std::map<std::string, AForm *> _forms;
 };
