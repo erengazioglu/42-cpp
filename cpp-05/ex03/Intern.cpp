@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 18:01:16 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 19:11:50 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/02 19:14:34 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ AForm* Intern::makeForm(const std::string& form, const std::string& target) cons
 	if (it != _forms.end()) {
 		AForm* new_form = it->second->clone();
 		new_form->set_target(target);
-		return it->second->clone();
+		return new_form;
 	}
 	std::cerr << RED 
 		<< "Form \"" << form
