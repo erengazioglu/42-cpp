@@ -6,14 +6,13 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:11:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 14:37:34 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/04 18:25:11 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
-
 	try {
 		std::cout << CYN << "Trying to create Bureaucrat(Pompy, 0)\n" << RST;
 		Bureaucrat b("Pompy", 0);

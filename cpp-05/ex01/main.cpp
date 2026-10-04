@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 14:11:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/29 23:24:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/04 18:50:10 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,7 @@ void tests_ex01_signing() {
 
 }
 
-
 int main() {
-
 	// tests_ex00();
 	// tests_ex01_ctors();
 	tests_ex01_signing();
