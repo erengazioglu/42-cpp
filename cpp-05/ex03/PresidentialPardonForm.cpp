@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 00:47:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 19:07:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:35:08 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void PresidentialPardonForm::set_target(const std::string& target) {
 
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
 	AForm::check_clearance(executor);
-	std::cout << executor.get_name()
+	std::cout << _target
 		<< " has been pardoned by Zaphod Beeblebrox.\n";
 }
