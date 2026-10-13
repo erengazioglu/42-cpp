@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 15:00:35 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 16:01:51 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:56:38 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 }
 
 void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
+	AForm::check_sign_status();
 	AForm::check_clearance(executor);
 	std::cout << "* Drilling noises *\n";
 	if (std::rand() % 2 == 0)

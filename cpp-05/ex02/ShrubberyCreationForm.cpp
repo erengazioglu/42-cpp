@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 15:11:44 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/02 16:34:04 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:56:42 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
+	AForm::check_sign_status();
 	AForm::check_clearance(executor);
 	std::string fn = _target + "_shrubbery";
 	std::ofstream f_out(fn.c_str());

@@ -33,6 +33,7 @@ class AForm {
 		const std::string& get_name(void) const;
 		int get_sign_clearance(void) const;
 		int get_exec_clearance(void) const;
+		void check_sign_status(void) const;
 		void check_clearance(const Bureaucrat& executor) const;
 		virtual void set_target(const std::string&) = 0;
 		virtual void execute(const Bureaucrat& executor) const = 0;
@@ -41,6 +42,9 @@ class AForm {
 			const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			const char* what() const throw();
+		};
+		class NotYetSignedException : public std::exception {
 			const char* what() const throw();
 		};
 		class AlreadySignedException : public std::exception {

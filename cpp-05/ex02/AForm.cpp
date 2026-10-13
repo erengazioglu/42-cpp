@@ -76,6 +76,11 @@ int AForm::get_exec_clearance(void) const {
 	return _exec_clearance;
 }
 
+void AForm::check_sign_status(void) const {
+	if (!_is_signed)
+		throw NotYetSignedException();
+}
+
 void AForm::check_clearance(const Bureaucrat& executor) const {
 	if (executor.get_grade() > _exec_clearance)
 		throw GradeTooLowException();
@@ -87,6 +92,10 @@ const char* AForm::GradeTooHighException::what() const throw() {
 
 const char* AForm::GradeTooLowException::what() const throw() {
 	return "grade too low";
+}
+
+const char* AForm::NotYetSignedException::what() const throw() {
+	return "form is not yet signed";
 }
 
 const char* AForm::AlreadySignedException::what() const throw() {
