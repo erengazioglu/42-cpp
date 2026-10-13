@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 00:47:41 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/09/30 16:06:18 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/13 15:34:38 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 void PresidentialPardonForm::execute(const Bureaucrat& executor) const {
 	// try {
 		AForm::check_clearance(executor);
-		std::cout << executor.get_name()
-			<< " has been pardoned by Zaphod Beeblebrox.\n";
+		std::cout << _target << " has been pardoned by Zaphod Beeblebrox.\n";
 	// } catch (std::exception& e) {
 	// 	std::cout << RED
 	// 		<< "Cannot execute " << AForm::get_name() 
