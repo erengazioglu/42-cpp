@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 19:32:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/04 19:34:31 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/14 12:46:49 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 	ScalarConverter::convert(argv[1]);
+	std::cout << 2.0f << "\n";
 	return 0;
 }
