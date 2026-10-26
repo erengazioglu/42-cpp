@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:03:29 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/17 19:03:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/22 00:17:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class Serializer {
 	public:
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+	private:
 		Serializer();
 		Serializer(const Serializer&);
 		~Serializer();

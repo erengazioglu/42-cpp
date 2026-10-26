@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:52:19 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/17 19:04:02 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/22 00:18:30 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@
 # include <cctype>
 # include <iomanip>
 # include <cstdlib>
+# include <stdint.h>
 
 #endif
