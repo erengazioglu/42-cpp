@@ -6,28 +6,16 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:02:58 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/28 00:25:15 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 00:39:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer() {
-	std::cout << BLU << "Serializer | Default constructor\n" << RST;
-}
-
-Serializer::Serializer(const Serializer& src) {
-	(void) src;
-	std::cout << BLU << "Serializer | Copy constructor\n" << RST;
-}
-
-Serializer::~Serializer() {
-	std::cout << RED << "Serializer | Destructor\n" << RST;
-}
-
-Serializer& Serializer::operator=(const Serializer& src) {
-	(void) src;
-	std::cout << BLU << "Serializer | Copy assignment\n" << RST;
+Serializer::Serializer() {}
+Serializer::Serializer(const Serializer&) {}
+Serializer::~Serializer() {}
+Serializer& Serializer::operator=(const Serializer&) {
 	return *this;
 }
 
