@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 19:02:58 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/28 00:20:09 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 00:25:15 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Serializer::Serializer() {
 }
 
 Serializer::Serializer(const Serializer& src) {
+	(void) src;
 	std::cout << BLU << "Serializer | Copy constructor\n" << RST;
 }
 
@@ -25,6 +26,7 @@ Serializer::~Serializer() {
 }
 
 Serializer& Serializer::operator=(const Serializer& src) {
+	(void) src;
 	std::cout << BLU << "Serializer | Copy assignment\n" << RST;
 	return *this;
 }

@@ -6,35 +6,40 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 12:42:21 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/28 00:15:26 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 00:37:33 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
 Data::Data()
-	: _sdata("Default data")
-	, _intdata(42)
+	: sdata("Default data")
+	, intdata(0)
 {}
 
 Data::Data(const bool alt)
-	: _sdata(alt ? "One type of data" : "Two type of data!")
-	, _intdata(alt ? 42 : 43)
+	: sdata(alt ? "One type of data" : "Two type of data!")
+	, intdata(alt ? 42 : 43)
 {}
 
 Data::Data(const Data& src) 
-	: _sdata(src._sdata)
-	, _intdata(src._intdata)
+	: sdata(src.sdata)
+	, intdata(src.intdata)
 {}
 
-Data::~Data() {
-	std::cout << RED << "Data | Empty destructor\n" << RST;
-}
+Data::~Data() {}
 
 Data& Data::operator=(const Data& src) {
 	if (this != &src) {
-		_sdata		= src._sdata;
-		_intdata	= src._intdata;
+		sdata	= src.sdata;
+		intdata	= src.intdata;
 	}
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Data& d) {
+	return os
+		<< &d << " "
+		<< d.sdata << " "
+		<< d.intdata;
 }
