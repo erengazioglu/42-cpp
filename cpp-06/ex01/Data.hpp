@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 12:42:47 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/22 13:16:35 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 00:10:21 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Data {
 	public:
 		Data();
 		Data(const Data&);
-		Data(const bool alternative);
+		Data(const bool alt);
 		~Data();
 		Data& operator=(const Data&);
 	private:

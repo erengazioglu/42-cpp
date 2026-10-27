@@ -6,20 +6,13 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 19:32:15 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/14 12:55:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 00:17:12 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Common.hpp"
-#include "ScalarConverter.hpp"
+#include "Data.hpp"
 
-int main(int argc, char** argv) {
-	if (argc != 2) {
-		std::cerr << RED
-			<< "Usage: ./scalar <arg1>\n" << RST;
-		return 1;
-	}
-	ScalarConverter::convert(argv[1]);
-	// std::cout << 2.0f << "\n";
+int main() {
 	return 0;
 }
