@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 00:42:05 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/28 01:37:07 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/10/28 01:44:35 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,27 @@ Base* generate(void) {
 	}
 }
 
+void identify(Base* p) {
+	if (dynamic_cast<A*>(p))
+		std::cout << "Type is A\n";
+	else if (dynamic_cast<B*>(p))
+		std::cout << "Type is B\n";
+	else if (dynamic_cast<C*>(p))
+		std::cout << "Type is C\n";
+	else
+		std::cout << "Type is something else entirely\n";
+}
+
+void identify(Base&) {
+	
+}
+
 int main() {
 	srand(time(NULL));
 	for (int i = 0; i < 10; i++) {
 		Base* obj = generate();
-		std::cout << obj->type;
+		std::cout << obj->type << ", ";
+		identify(obj);
 		delete obj;
 	}
 	std::cout << "\n";
