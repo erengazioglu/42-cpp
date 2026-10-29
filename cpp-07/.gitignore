@@ -1,0 +1,7 @@
+*test.cpp
+*.out
+
+# EXECUTABLES
+ex00/swap
+ex01/iter
+ex02/array
