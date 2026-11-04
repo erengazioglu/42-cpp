@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 18:52:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/10/17 18:57:40 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/11/04 17:57:19 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void ScalarConverter::print(char c) {
 
 void ScalarConverter::print(int i) {
 	if (i < 32 || i >= 127)
-		std::cout << RED << "char: not printable\n" << RST;
+		std::cout << RED << "char: non displayable\n" << RST;
 	else
 		std::cout << "char: " << static_cast<char>(i) << "\n";
 	std::cout << std::fixed << std::setprecision(1)
@@ -82,7 +82,7 @@ void ScalarConverter::print(std::string str, bool is_float) {
 
 void ScalarConverter::print(double d) {
 	if (d < 32 || d >= 127)
-		std::cout << RED << "char: not printable\n" << RST;
+		std::cout << RED << "char: non displayable\n" << RST;
 	else
 		std::cout << "char: " << static_cast<char>(d) << "\n";
 	if (d < INT_MIN || d > INT_MAX)

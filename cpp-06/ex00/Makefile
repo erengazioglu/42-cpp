@@ -6,12 +6,12 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/30 23:18:52 by egaziogl          #+#    #+#              #
-#    Updated: 2026/10/04 18:57:56 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/11/04 17:55:46 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
-NAME 	= scalar
+NAME 	= convert
 SRC		= \
 	main.cpp \
 	ScalarConverter.cpp
