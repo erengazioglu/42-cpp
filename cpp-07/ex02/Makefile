@@ -6,7 +6,7 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/01 01:32:03 by egaziogl          #+#    #+#              #
-#    Updated: 2026/11/01 01:32:22 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/11/06 21:00:30 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME 	= array
 SRC		= \
 	main.cpp
 DEP		= \
-	array.hpp \
-	array.tpp
+	Array.hpp \
+	Array.tpp
 
 all: $(NAME)
 

@@ -6,13 +6,9 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 01:31:25 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/11/01 01:31:48 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/11/06 21:00:26 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
-
-# include <iostream>
-
-#endif
+#pragma once
+#include <iostream>
