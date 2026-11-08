@@ -6,11 +6,11 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/01 01:32:03 by egaziogl          #+#    #+#              #
-#    Updated: 2026/11/07 15:13:07 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/11/08 00:47:50 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++ -Wall -Wextra -Werror -std=c++98
+CC		= c++ -Wall -Wextra -Werror -std=c++98 -g
 NAME 	= span
 SRC		= \
 	main.cpp \

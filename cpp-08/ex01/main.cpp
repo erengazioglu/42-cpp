@@ -6,19 +6,24 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 00:50:25 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/11/07 17:27:32 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/11/08 01:04:21 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <iostream>
 
 int main() {
-	Span sp;
-	sp.addNumber(40);
-	sp.addNumber(10);
-	sp.addNumber(20);
-	std::cout << sp.longestSpan() << "\n";
-	std::cout << sp.shortestSpan() << "\n";
+	srand(time(NULL));
+	try {
+		Span sp;
+		sp.generate(10);
+		sp.print();
+		std::cout 
+			<< "\nLongest: " << sp.longestSpan()
+			<< "\nShortest: " << sp.shortestSpan()
+			<< "\n";
+	} catch (std::exception& e) {
+		std::cout << RED << e.what() << RST << "\n";
+	}
 	return 0;
 }
