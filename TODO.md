@@ -6,7 +6,7 @@
 - cpp03: 100/100
 - cpp04: 100/100
 - cpp05: 100/100
-- cpp06: _waiting eval_
+- cpp06: 100/100
 - cpp07: _waiting eval_
 - cpp08: _in progress_
 - cpp09: _pending_
