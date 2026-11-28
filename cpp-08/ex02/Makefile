@@ -6,11 +6,11 @@
 #    By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/11/01 01:32:03 by egaziogl          #+#    #+#              #
-#    Updated: 2026/11/07 00:49:30 by egaziogl         ###   ########.fr        #
+#    Updated: 2026/11/28 10:06:30 by egaziogl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC		= c++ -Wall -Wextra -Werror -std=c++98
+CC		= c++ -Wall -Wextra -Werror -std=c++98 -g
 NAME 	= mutant
 SRC		= \
 	main.cpp
