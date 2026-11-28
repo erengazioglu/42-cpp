@@ -8,5 +8,5 @@
 - cpp05: 100/100
 - cpp06: 100/100
 - cpp07: _waiting eval_
-- cpp08: _in progress_
+- cpp08: _waiting eval_
 - cpp09: _pending_
