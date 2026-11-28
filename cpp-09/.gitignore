@@ -1,6 +1,6 @@
 *test.cpp
 *.out
-cpp_09/
+*.csv
 
 # EXECUTABLES
 ex00/bitcoin
