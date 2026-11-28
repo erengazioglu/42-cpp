@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/07 00:51:45 by egaziogl          #+#    #+#             */
-/*   Updated: 2026/11/28 10:26:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2026/11/28 12:58:14 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ class MutantStack: public std::stack<T> {
 		typedef typename std::stack<T>::container_type::iterator			iterator;
 		typedef typename std::stack<T>::container_type::const_iterator		const_iterator;
 		
-		MutantStack() {};
+		MutantStack() : name("frankenstack") {};
 		~MutantStack() {};
-		MutantStack(const MutantStack<T>& other): std::stack<T>(other) {}
-		MutantStack& operator=(const MutantStack<T>& other) {
-			std::stack<T>::operator=(other);
+		MutantStack(const MutantStack<T>& src): std::stack<T>(src), name("copy of " + src.name) {
+			std::cout << YEL << "copied MutantStack " << src.name << RST << '\n';
+		}
+		MutantStack& operator=(const MutantStack<T>& src) {
+			std::stack<T>::operator=(src);
+			name = src.name;
 			return *this;
 		}
 		iterator begin() {
@@ -47,15 +50,18 @@ class MutantStack: public std::stack<T> {
 		const_iterator end() const {
 			return this->c.end();
 		}
+		std::string name;
 };
 
 template <typename T>
-std::ostream& operator<<(std::ostream& os, MutantStack<T> ms) {
-	os	<< CYN << "- MutantStack size: "
-		<< ms.size() << '\n' << RST;
+std::ostream& operator<<(std::ostream& os, const MutantStack<T>& ms) {
+	os	<< "MutantStack(\"" 
+		<< ms.name << "\")\n"
+		<< "- size: " << ms.size()
+		<< '\n';
 	if (!ms.empty()) {
-		os	<< CYN << "- contents:\n" << RST;
-		for (typename MutantStack<T>::iterator it = ms.begin(); it != ms.end(); it++)
+		os << "- contents:\n";
+		for (typename MutantStack<T>::const_iterator it = ms.begin(); it != ms.end(); it++)
 			std::cout << "    " << *it << '\n';
 	}
 	return os;
